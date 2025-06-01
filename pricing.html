@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostGrid Pricing</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pricing-table {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+    .plan {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 4px 20px rgba(0, 255, 170, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 30px rgba(0, 255, 170, 0.2);
+    }
+    .plan h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #00ffaa;
+      text-align: center;
+    }
+    .plan .price {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .plan .tagline {
+      font-size: 0.95rem;
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .plan ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .plan ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .plan ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00ffaa;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <h1 class="logo">GhostGrid</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h2>Simple Pricing. Real Protection.</h2>
+    <p>Start with the essentials. Add more security as you grow.</p>
+  </header>
+
+  <main class="pricing-table">
+    <section class="plan plan-core">
+      <h3>GhostGrid Core</h3>
+      <p class="price">$15/device/month</p>
+      <p class="tagline">Managed Webroot protection for individuals and small businesses</p>
+      <ul>
+        <li>Webroot installation & configuration</li>
+        <li>Real-time malware & phishing protection</li>
+        <li>Cloud-based monitoring & alerts</li>
+        <li>Weekly scan logs & support</li>
+        <li>Lightweight & efficient system coverage</li>
+      </ul>
+    </section>
+
+    <section class="plan plan-addon">
+      <h3>Add-On: Device Hardening</h3>
+      <p class="price">$50 one-time/device</p>
+      <p class="tagline">Lock down your system for stronger defense</p>
+      <ul>
+        <li>Disable risky Windows services</li>
+        <li>Enforce strong password policies</li>
+        <li>Enable BitLocker (Windows) or FileVault (Mac) encryption</li>
+      </ul>
+    </section>
+
+    <section class="plan plan-checkup">
+      <h3>Add-On: Monthly Checkups</h3>
+      <p class="price">$25/month</p>
+      <p class="tagline">Ongoing monitoring and guidance</p>
+      <ul>
+        <li>Manual threat & activity review</li>
+        <li>Monthly security summary report</li>
+        <li>Zoom walk-through and recommendations</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> GhostGrid. All rights reserved.</p>
+    <p><a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
