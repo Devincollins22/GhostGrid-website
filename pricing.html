@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GhostGrid Pricing</title>
+  <title>GhostGrid – Pricing</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .pricing-table {
@@ -48,80 +48,127 @@
     .plan ul {
       list-style: none;
       padding-left: 0;
+      border-top: 1px solid #333;
     }
     .plan ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
+      margin: 0;
+      padding: 12px 0;
+      border-bottom: 1px solid #333;
+      color: #e5e5e5;
     }
-    .plan ul li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #00ffaa;
-    }
+    .plan ul li {
+  margin: 0;
+  padding: 12px 0 12px 24px; /* add left padding */
+  border-bottom: 1px solid #333;
+  color: #e5e5e5;
+  position: relative;
+}
+
+.plan ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ffaa;
+}
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <h1 class="logo">GhostGrid</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <nav style="position: sticky; top: 0; z-index: 999; background-color: #0d0d0d; box-shadow: 0 2px 6px rgba(0,0,0,0.6);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: #00ffaa; font-size: 28px; font-weight: bold; text-decoration: none;">GhostGrid</a>
+      <ul style="list-style: none; display: flex; gap: 24px; margin: 0; padding: 0;">
+        <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Home</a></li>
+        <li><a href="services.html" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Services</a></li>
+        <li><a href="pricing.html" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Pricing</a></li>
+        <li><a href="contact.html" style="color: #ffffff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero">
-    <h2>Simple Pricing. Real Protection.</h2>
-    <p>Start with the essentials. Add more security as you grow.</p>
+  <header class="hero" style="text-align:center; padding: 50px 20px;">
+    <h2 style="color:#00ffaa;">Cybersecurity That Fits Your Business – Simple Pricing Plans</h2>
+    <p>Pick the right level of protection for your business — with no hidden fees or contracts.</p>
   </header>
 
   <main class="pricing-table">
-    <section class="plan plan-core">
-      <h3>GhostGrid Core</h3>
-      <p class="price">$15/device/month</p>
-      <p class="tagline">Managed Webroot protection for individuals and small businesses</p>
+    <section class="plan">
+      <h3>CyberShield Basic</h3>
+      <p class="price">$20/user/month</p>
+      <p class="tagline">Essential endpoint & DNS protection</p>
       <ul>
-        <li>Webroot installation & configuration</li>
-        <li>Real-time malware & phishing protection</li>
-        <li>Cloud-based monitoring & alerts</li>
-        <li>Weekly scan logs & support</li>
-        <li>Lightweight & efficient system coverage</li>
+        <li>  Webroot Endpoint Protection</li>
+        <li>  DNS Filtering</li>
+        <li>  Weekly health checks</li>
+        <li>  Cloud-based dashboard</li>
       </ul>
     </section>
 
-    <section class="plan plan-addon">
-      <h3>Add-On: Device Hardening</h3>
-      <p class="price">$50 one-time/device</p>
-      <p class="tagline">Lock down your system for stronger defense</p>
+    <section class="plan">
+      <h3>CyberShield Pro</h3>
+      <p class="price">$30/user/month</p>
+      <p class="tagline">Layered protection + email security</p>
       <ul>
-        <li>Disable risky Windows services</li>
-        <li>Enforce strong password policies</li>
-        <li>Enable BitLocker (Windows) or FileVault (Mac) encryption</li>
+        <li>  Everything in Basic</li>
+        <li>  Email filtering (IRONSCALES)</li>
+        <li>  Malware removal support</li>
+        <li>  System security tuning</li>
       </ul>
     </section>
 
-    <section class="plan plan-checkup">
-      <h3>Add-On: Monthly Checkups</h3>
-      <p class="price">$25/month</p>
-      <p class="tagline">Ongoing monitoring and guidance</p>
+    <section class="plan">
+      <h3>CyberShield Elite</h3>
+      <p class="price">$40/user/month</p>
+      <p class="tagline">Backup + system audits + response</p>
       <ul>
-        <li>Manual threat & activity review</li>
-        <li>Monthly security summary report</li>
-        <li>Zoom walk-through and recommendations</li>
+        <li>  Everything in Pro</li>
+        <li>  Cloud backup & recovery</li>
+        <li>  Hardening audits</li>
+        <li>  Incident response prep</li>
+      </ul>
+    </section>
+
+    <section class="plan">
+      <h3>CyberShield SentinelOne</h3>
+      <p class="price">$75/user/month</p>
+      <p class="tagline">AI-driven EDR + ransomware rollback</p>
+      <ul>
+        <li>  SentinelOne Complete Protection</li>
+        <li>  Autonomous threat detection</li>
+        <li>  Ransomware rollback</li>
+        <li>  Optional 24/7 MDR (Vigilance)</li>
+      </ul>
+    </section>
+
+    <section class="plan">
+      <h3>Monitoring & Patch Management</h3>
+      <p class="price">$20/device</p>
+      <p class="tagline">Continuous updates + patching</p>
+      <ul>
+        <li>  Remote monitoring</li>
+        <li>  Automated patch management</li>
+        <li>  Threat detection integration</li>
+      </ul>
+    </section>
+
+    <section class="plan">
+      <h3>Security Report + Walkthrough</h3>
+      <p class="price">$20/user</p>
+      <p class="tagline">Monthly review + expert call</p>
+      <ul>
+        <li>  Manual security analysis</li>
+        <li>  PDF report with insights</li>
+        <li>  Live Zoom strategy session</li>
       </ul>
     </section>
   </main>
 
-  <footer>
+  <footer style="text-align:center; margin-top: 60px;">
     <p>&copy; <span id="year"></span> GhostGrid. All rights reserved.</p>
     <p><a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
