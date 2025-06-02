@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GhostGrid – Elite Cybersecurity Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #0d0d0d;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      border-bottom: 3px solid #00ffaa;
+    }
+
+    .logo {
+      color: #00ffaa;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      font-size: 24px;
+      color: #00ffaa;
+      background: none;
+      border: 2px solid #00ffaa;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dropdown-btn:hover {
+      background-color: rgba(0, 255, 170, 0.08);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 255, 170, 0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: rgba(0, 255, 170, 0.1);
+      color: #00ffaa;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .dropdown-menu {
+        top: 48px;
+        right: 0;
+      }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    }
+
+    .hero h2 {
+      color: #00ffaa;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .service {
+      background: linear-gradient(160deg, #111, #1c1c1c);
+      border-left: 4px solid #00ffaa;
+      padding: 28px;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 255, 170, 0.1);
+    }
+
+    .service h3 {
+      color: #00ffaa;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .service ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .service ul li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid #222;
+    }
+
+    .service ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00ffaa;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .service ul li:last-child {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      color: #888;
+    }
+
+    footer a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="01-index.html" class="logo">GhostGrid</a>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="01-index.html">Home</a>
+        <a href="02-services.html">Services</a>
+        <a href="03-pricing.html">Pricing</a>
+        <a href="04-contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h2>Cybersecurity That Works as Hard as You Do</h2>
+    <p>GhostGrid combines elite tools, expert monitoring, and the mindset of champions to keep your business protected and ahead of threats.</p>
+  </header>
+
+  <main>
+    <div class="services-grid">
+      <section class="service">
+        <h3>🛡️ CyberShield Basic</h3>
+        <ul>
+          <li>Webroot Endpoint Protection</li>
+          <li>DNS Filtering for phishing protection</li>
+          <li>Weekly device health checks</li>
+          <li>Cloud-based security dashboard</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>🔐 CyberShield Pro</h3>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>Email phishing & spam filtering</li>
+          <li>Priority malware removal support</li>
+          <li>System optimization for threat defense</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>🚨 CyberShield Elite</h3>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Cloud backups with disaster recovery</li>
+          <li>Monthly hardening audit</li>
+          <li>Incident response prep & recovery</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>🧠 SentinelOne Package</h3>
+        <ul>
+          <li>Complete AI-driven Endpoint Protection</li>
+          <li>Behavioral threat detection and rollback</li>
+          <li>24/7 Managed Detection & Response (Optional)</li>
+          <li>Compliance & forensic reporting</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>⚙️ Add-On Services</h3>
+        <ul>
+          <li><strong>Patch Management:</strong> Full system updates & vulnerability scans</li>
+          <li><strong>Monthly Zoom Report:</strong> Live expert insight with next steps</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>🔍 Network Visibility & Mapping</h3>
+        <ul>
+          <li>Real-time device discovery and status mapping</li>
+          <li>Track rogue devices and unauthorized connections</li>
+          <li>Visual dashboards to monitor your IT perimeter</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>💾 Data Loss Prevention (DLP)</h3>
+        <ul>
+          <li>Monitor and restrict sensitive data transfer</li>
+          <li>Email and file movement protection</li>
+          <li>Compliance-friendly data handling policies</li>
+        </ul>
+      </section>
+
+      <section class="service">
+        <h3>🧪 Security Awareness Training</h3>
+        <ul>
+          <li>Custom phishing simulations for staff</li>
+          <li>Interactive cybersecurity learning modules</li>
+          <li>Track employee progress and performance</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> GhostGrid. All rights reserved.</p>
+    <p><a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdownMenu');
+      const button = document.querySelector('.dropdown-btn');
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

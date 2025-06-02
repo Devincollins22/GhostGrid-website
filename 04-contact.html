@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact GhostGrid</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #0d0d0d;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      border-bottom: 3px solid #00ffaa;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      font-size: 24px;
+      color: #00ffaa;
+      background: none;
+      border: 2px solid #00ffaa;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dropdown-btn:hover {
+      background-color: rgba(0, 255, 170, 0.08);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 255, 170, 0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: rgba(0, 255, 170, 0.1);
+      color: #00ffaa;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .dropdown-menu {
+        top: 48px;
+        right: 0;
+      }
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    .contact-wrapper img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      color: #ccc;
+    }
+
+    .contact-info h2 {
+      color: #00ffaa;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      color: #888;
+    }
+
+    footer a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="01-index.html" class="logo" style="color:#00ffaa; font-size: 26px; font-weight: bold; text-decoration: none;">GhostGrid</a>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="01-index.html">Home</a>
+        <a href="02-services.html">Services</a>
+        <a href="03-pricing.html">Pricing</a>
+        <a href="04-contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h2>Let’s Talk Cybersecurity</h2>
+    <p>Have a question, need a quote, or ready to secure your business? Reach out directly.</p>
+  </header>
+
+  <main>
+    <section class="contact-wrapper">
+      <img src="IMG_1595.png" alt="Devin Collins Headshot" />
+      <div class="contact-info">
+        <h2>Devin Collins</h2>
+        <p>Founder & Cybersecurity Consultant</p>
+        <p>Student-athlete at Canisius University</p>
+        <p>Pursuing a Master in Cybersecurity</p>
+        <p>Email: <a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
+        <p>Location: Buffalo, NY</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> GhostGrid. All rights reserved.</p>
+    <p><a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdownMenu');
+      const button = document.querySelector('.dropdown-btn');
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -6,19 +6,19 @@ We help clients stay protected with real-time threat monitoring, endpoint harden
 
 ## 🔐 Services Offered
 
-### ✅ GhostGrid Core ($20/device/month)
+### ✅ GhostGrid Core 
 - Webroot SecureAnywhere installation & configuration
 - Real-time malware, phishing, and ransomware protection
 - Cloud-based monitoring
 - Weekly scan summaries
 - Malware removal support
 
-### 🔧 Device Hardening ($50 one-time/device)
+### 🔧 Device Hardening 
 - Disable risky Windows services
 - Enforce strong password policies
 - Enable BitLocker (Windows) or FileVault (Mac)
 
-### 📊 Monthly Checkups ($35/month per client)
+### 📊 Monthly Checkups 
 - Manual Webroot review & scan log audit
 - Monthly report with recommendations
 - Optional Zoom walkthrough

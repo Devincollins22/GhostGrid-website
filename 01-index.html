@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GhostGrid – Professional Cybersecurity for Modern Businesses</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #0d0d0d;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #00ffaa;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #00ffaa;
+      border-radius: 1px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-btn {
+      font-size: 24px;
+      color: #00ffaa;
+      background: none;
+      border: 2px solid #00ffaa;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dropdown-btn:hover {
+      background-color: rgba(0, 255, 170, 0.08);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 255, 170, 0.08);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: rgba(0, 255, 170, 0.1);
+      color: #00ffaa;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    }
+
+    header h2 {
+      color: #00ffaa;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #00ffaa;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      box-shadow: 0 0 12px #00ffaa88;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00ddcc;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      color: #888;
+    }
+
+    footer a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    border-radius: 10px;
+    width: 180px;
+  }
+
+  .dropdown-menu a {
+    border-top: 1px solid #222;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="01-index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 0 24 24" fill="#00ffaa">
+        <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+      GhostGrid
+    </a>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="01-index.html">Home</a>
+        <a href="02-services.html">Services</a>
+        <a href="03-pricing.html">Pricing</a>
+        <a href="04-contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Trusted Cybersecurity. Built for Modern Businesses.</h2>
+    <p>GhostGrid empowers growing businesses with elite-level cybersecurity. Trusted tools, real people, and proactive protection — no gimmicks.</p>
+    <a href="03-pricing.html" class="cta-button">Explore Our Plans</a>
+  </header>
+
+  <main>
+    <h2 style="color: #00ffaa;">About GhostGrid</h2>
+    <p><strong>GhostGrid is a next-generation Managed Security Provider (MSP)</strong> founded by Devin Collins, an ISC² Certified Cybersecurity Specialist and NCAA Division I athlete. GhostGrid merges discipline and elite performance with industry-leading tools to help growing businesses stay safe from today’s evolving threats.</p>
+    <p>From phishing attacks and ransomware to insider threats and unpatched systems, GhostGrid equips you with the protection and guidance you need. Whether you’re a solopreneur, team of ten, or a multi-location operation, we provide scalable and intelligent security that works efficiently and effectively.</p>
+
+    <h3 style="color: #00ffaa;">Why Partner with GhostGrid?</h3>
+    <ul>
+      <li><strong style="color: #00ffaa;">One-on-One Support:</strong> Direct access to certified cybersecurity pros — no bots or offshore help desks.</li>
+      <li><strong style="color: #00ffaa;">Tailored Cybersecurity:</strong> Every client gets a personalized protection plan based on risk and needs.</li>
+      <li><strong style="color: #00ffaa;">Elite Athlete Mentality:</strong> We bring training discipline, focus, and high-performance mindset to cybersecurity.</li>
+      <li><strong style="color: #00ffaa;">Transparent Pricing:</strong> You’ll always know what you’re paying for. No hidden fees.</li>
+      <li><strong style="color: #00ffaa;">Continuous Optimization:</strong> We constantly audit, upgrade, and strengthen your defenses.</li>
+    </ul>
+
+    <h3 style="color: #00ffaa;">Our Vision</h3>
+    <p>We believe every business — no matter how small — deserves access to professional cybersecurity. Our mission is to empower business owners with the knowledge, tools, and support they need to operate confidently in a digital world. We're here to make cybersecurity not just something you have, but something you understand and value.</p>
+    <p>GhostGrid strives to change the perception of cybersecurity from a reactive IT service into a proactive business advantage. By helping you prevent, respond, and grow securely, we become more than your MSP — we become your trusted digital defense partner.</p>
+  </main>
+
+  <footer>
+    <p><strong>Ready to secure your business?</strong></p>
+    <a href="mailto:cybercollins25@gmail.com" class="cta-button">Get a Free Quote</a>
+    <p style="margin-top: 20px;">&copy; <span id="year"></span> GhostGrid. All rights reserved.</p>
+    <p><a href="mailto:cybercollins25@gmail.com">cybercollins25@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu').classList.toggle('show');
+    }
+
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdownMenu');
+      const button = document.querySelector('.dropdown-btn');
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

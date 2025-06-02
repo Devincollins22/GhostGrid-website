@@ -143,3 +143,57 @@
   footer a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px; /* shifted slightly in from the right edge */
+      background-color: #0d0d0d;
+      text-align: left;
+      padding: 1px 1px;  /* 👈 space on sides + top/bottom */
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 255, 170, 0.15);
+      min-width: 160px;  /* 👈 ensures width fits all links neatly */
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      padding: 10px 0;
+    }
+  
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+  
+    .nav-links li a:hover {
+      color: #00ffaa;
+      animation: slideFade 0.25s ease-in-out;
+    }
+  }
+
+  @keyframes slideFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
