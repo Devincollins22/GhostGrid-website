@@ -33,7 +33,7 @@ This static website is deployed via **Netlify** and auto-updated from the GitHub
 
 ## 📫 Contact
 
-Reach out at: [cybercollins25@gmail.com](mailto:cybercollins25@gmail.com)
+Reach out at: [dmc@ghostgridcyber.com](mailto:dmc@ghostgridcyber.com)
 
 ---
 
