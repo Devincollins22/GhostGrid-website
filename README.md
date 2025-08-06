@@ -1,6 +1,6 @@
-# GhostGrid – Cybersecurity MSP
+# GhostGrid – Cybersecurity MSSP
 
-**GhostGrid** is a modern, solo-run Managed Security Provider (MSP) focused on delivering lightweight, effective cybersecurity services for individuals, families, and small businesses.
+**GhostGrid** is a modern, solo-run Managed Security Service Provider (MSSP) focused on delivering lightweight, effective cybersecurity services for individuals, families, and small businesses.
 
 We help clients stay protected with real-time threat monitoring, endpoint hardening, and monthly security checkups — all with a personal touch.
 
