@@ -7,21 +7,7 @@ We help clients stay protected with real-time threat monitoring, endpoint harden
 ## 🔐 Services Offered
 
 ### ✅ GhostGrid Core 
-- Webroot SecureAnywhere installation & configuration
-- Real-time malware, phishing, and ransomware protection
-- Cloud-based monitoring
-- Weekly scan summaries
-- Malware removal support
-
-### 🔧 Device Hardening 
-- Disable risky Windows services
-- Enforce strong password policies
-- Enable BitLocker (Windows) or FileVault (Mac)
-
-### 📊 Monthly Checkups 
-- Manual Webroot review & scan log audit
-- Monthly report with recommendations
-- Optional Zoom walkthrough
+- Start up and will provide Managed Security Services for small business: Subcontractor for CAC INC.
 
 ## 🌐 Website
 
