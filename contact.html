@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GhostGrid Cyber – Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00ffaa">
+        <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+      GHOSTGRID
+    </a>
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="hero-tag">// Let's Talk</span>
+    <h2>Ready to <span class="accent">Lock Down</span> Your Business?</h2>
+    <p>Reach out directly. We respond within 24 hours and always start with a free, no-pressure discovery call.</p>
+  </header>
+
+  <main>
+    <div class="contact-layout">
+
+      <!-- LEFT: Profile -->
+      <div class="contact-profile">
+        <img src="IMG_1595.png" alt="Devin Collins – GhostGrid Cyber Founder" />
+        <h2>Devin Collins</h2>
+        <p class="title">
+          Founder & Cybersecurity Consultant<br>
+          ISC² Certified Cybersecurity Specialist<br>
+          NCAA D-I Athlete · Canisius University<br>
+          Master's in Cybersecurity (In Progress)
+        </p>
+        <ul class="contact-details">
+          <li>
+            <span class="label">EMAIL</span>
+            <a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a>
+          </li>
+          <li>
+            <span class="label">LOCATION</span>
+            Buffalo, NY
+          </li>
+          <li>
+            <span class="label">RESPONSE</span>
+            Within 24 hours
+          </li>
+          <li>
+            <span class="label">CERT</span>
+            ISC² Certified Cybersecurity Specialist
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <h3>Send a Message</h3>
+          <p>Tell us about your business and we'll put together a free security recommendation.</p>
+
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Business email" required />
+          <input type="text" name="company" placeholder="Company name" />
+
+          <select name="size">
+            <option value="" disabled selected>Company size</option>
+            <option>1–10 employees</option>
+            <option>11–50 employees</option>
+            <option>51–200 employees</option>
+            <option>200+ employees</option>
+          </select>
+
+          <select name="interest">
+            <option value="" disabled selected>I'm interested in...</option>
+            <option>CyberShield Basic</option>
+            <option>CyberShield Pro</option>
+            <option>CyberShield Elite</option>
+            <option>SentinelOne AI Protection</option>
+            <option>Free Security Assessment</option>
+            <option>Not sure yet — help me figure it out</option>
+          </select>
+
+          <textarea name="message" placeholder="Tell us about your current setup or any security concerns you have..."></textarea>
+
+          <button type="submit">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-logo">GHOSTGRID_CYBER</span>
+    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
+    <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
