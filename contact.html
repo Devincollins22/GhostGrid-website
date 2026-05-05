@@ -28,22 +28,22 @@
 
   <header class="hero">
     <span class="hero-tag">// Let's Talk</span>
-    <h2>Ready to <span class="accent">Lock Down</span> Your Business?</h2>
-    <p>Reach out directly. We respond within 24 hours and always start with a free, no-pressure discovery call.</p>
+    <h2>Book Your<br><span class="accent">Free Consultation</span></h2>
+    <p>30 minutes, zero pressure. We'll learn about your business and show you exactly how GhostGrid can help — before you spend a dollar.</p>
   </header>
 
   <main>
     <div class="contact-layout">
 
-      <!-- LEFT: Profile -->
+      <!-- LEFT: About Devin -->
       <div class="contact-profile">
-        <img src="IMG_1595.png" alt="Devin Collins – GhostGrid Cyber Founder" />
+        <img src="IMG_1595.png" alt="Devin Collins – Founder, GhostGrid Cyber" />
         <h2>Devin Collins</h2>
         <p class="title">
-          Founder & Cybersecurity Consultant<br>
-          ISC² Certified Cybersecurity Specialist<br>
-          NCAA D-I Athlete · Canisius University<br>
-          Master's in Cybersecurity (In Progress)
+          Founder, GhostGrid Cyber<br>
+          Web Designer & Cybersecurity Student<br>
+          Canisius University — M.S. Cybersecurity (In Progress)<br>
+          Buffalo, NY
         </p>
         <ul class="contact-details">
           <li>
@@ -58,42 +58,30 @@
             <span class="label">RESPONSE</span>
             Within 24 hours
           </li>
-          <li>
-            <span class="label">CERT</span>
-            ISC² Certified Cybersecurity Specialist
-          </li>
         </ul>
       </div>
 
       <!-- RIGHT: Form -->
       <div>
         <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <h3>Send a Message</h3>
-          <p>Tell us about your business and we'll put together a free security recommendation.</p>
+          <p>Tell us about your business and what you're looking for — we'll get back to you within 24 hours.</p>
 
           <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Business email" required />
-          <input type="text" name="company" placeholder="Company name" />
-
-          <select name="size">
-            <option value="" disabled selected>Company size</option>
-            <option>1–10 employees</option>
-            <option>11–50 employees</option>
-            <option>51–200 employees</option>
-            <option>200+ employees</option>
-          </select>
+          <input type="email" name="email" placeholder="Your email address" required />
+          <input type="text" name="business" placeholder="Business name (optional)" />
+          <input type="tel" name="phone" placeholder="Phone number (optional)" />
 
           <select name="interest">
-            <option value="" disabled selected>I'm interested in...</option>
-            <option>CyberShield Basic</option>
-            <option>CyberShield Pro</option>
-            <option>CyberShield Elite</option>
-            <option>SentinelOne AI Protection</option>
-            <option>Free Security Assessment</option>
-            <option>Not sure yet — help me figure it out</option>
+            <option value="" disabled selected>What are you looking for?</option>
+            <option>A new website for my business</option>
+            <option>Redesign or update my existing website</option>
+            <option>Take over hosting and management of my site</option>
+            <option>Not sure yet — let's talk</option>
           </select>
 
-          <textarea name="message" placeholder="Tell us about your current setup or any security concerns you have..."></textarea>
+          <textarea name="message" placeholder="Tell us a bit about your business and what you need..."></textarea>
 
           <button type="submit">Send Message →</button>
         </form>
