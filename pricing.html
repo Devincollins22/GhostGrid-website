@@ -193,9 +193,60 @@
     .cta-block h2 { color: var(--green); margin-bottom: 12px; }
     .cta-block p { max-width: 520px; margin: 0 auto 28px; }
 
+    .savings-section {
+      margin-bottom: 64px;
+    }
+
+    .savings-section p {
+      max-width: 680px;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .savings-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 560px;
+      margin-top: 28px;
+    }
+
+    .savings-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.93rem;
+      color: var(--muted);
+      gap: 16px;
+    }
+
+    .savings-row:last-child { border-bottom: none; }
+
+    .savings-row .label { font-weight: 600; color: var(--text); white-space: nowrap; }
+    .savings-row .breakdown { font-family: var(--mono); font-size: 0.78rem; color: #555; }
+    .savings-row .total { font-family: var(--mono); font-weight: 700; white-space: nowrap; }
+
+    .savings-row.ghostgrid { background: rgba(0,255,170,0.06); }
+    .savings-row.ghostgrid .label,
+    .savings-row.ghostgrid .total { color: var(--green); }
+
+    .savings-row.you-save {
+      background: rgba(0,255,170,0.03);
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      color: var(--green);
+      letter-spacing: 1px;
+    }
+
     @media (max-width: 768px) {
       .plan-single { padding: 32px 24px; }
       .price-display .amount { font-size: 2.6rem; }
+      .savings-row { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
   </style>
 </head>
@@ -226,6 +277,29 @@
   </header>
 
   <main>
+
+    <section class="savings-section">
+      <span class="section-tag">// Why GhostGrid</span>
+      <h2>You're Actually Saving Money.</h2>
+      <p>Most small businesses are already paying $150–200/mo between their website builder, domain, hosting, SSL certificate, and security tools — all bought separately from different companies with hidden fees and zero support.</p>
+      <p>GhostGrid bundles everything into one flat $99/mo — custom website, hosting, domain, SSL, security, and a real person you can actually call. No hidden fees. No surprises.</p>
+
+      <div class="savings-box">
+        <div class="savings-row">
+          <span class="label">The other guys</span>
+          <span class="breakdown">Domain $15 + Hosting $25 + SSL $20 + Security $50 + Support $50</span>
+          <span class="total">$160+/mo</span>
+        </div>
+        <div class="savings-row ghostgrid">
+          <span class="label">GhostGrid</span>
+          <span class="breakdown">Everything above, included</span>
+          <span class="total">$99/mo</span>
+        </div>
+        <div class="savings-row you-save">
+          You save $60+/mo — that's $720+ a year.
+        </div>
+      </div>
+    </section>
 
     <span class="section-tag">// 01. THE PLAN</span>
     <h2>GhostGrid Website Plan</h2>
