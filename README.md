@@ -24,3 +24,4 @@ Reach out at: [dmc@ghostgridcyber.com](mailto:dmc@ghostgridcyber.com)
 ---
 
 > Built and secured by Devin Collins, Canisius University student-athlete & cybersecurity specialist.
+
