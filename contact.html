@@ -4,17 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GhostGrid Cyber – Contact</title>
+  <meta name="description" content="Get in touch with GhostGrid Cyber for a free consultation on web design or cloud security services." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00ffaa">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00e89a">
         <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
       </svg>
       GHOSTGRID
     </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta active">Get Started</a>
+    </div>
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
@@ -27,9 +34,9 @@
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">// Let's Talk</span>
-    <h2>Book Your<br><span class="accent">Free Consultation</span></h2>
-    <p>30 minutes, zero pressure. We'll learn about your business and show you exactly how GhostGrid can help — before you spend a dollar.</p>
+    <span class="hero-tag">Contact</span>
+    <h2>Let's Talk About<br><span class="accent">What You Need</span></h2>
+    <p>Book a free consultation or send us a message. We'll get back to you within 24 hours.</p>
   </header>
 
   <main>
@@ -40,22 +47,22 @@
         <img src="IMG_1595.png" alt="Devin Collins – Founder, GhostGrid Cyber" />
         <h2>Devin Collins</h2>
         <p class="title">
-          Founder, GhostGrid Cyber<br>
-          Web Designer & Cybersecurity Student<br>
-          Canisius University — M.S. Cybersecurity (In Progress)<br>
+          Founder &amp; Security Engineer<br>
+          GhostGrid Cyber<br>
+          Canisius University — M.S. Cybersecurity<br>
           Buffalo, NY
         </p>
         <ul class="contact-details">
           <li>
-            <span class="label">EMAIL</span>
+            <span class="label">Email</span>
             <a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a>
           </li>
           <li>
-            <span class="label">LOCATION</span>
+            <span class="label">Location</span>
             Buffalo, NY
           </li>
           <li>
-            <span class="label">RESPONSE</span>
+            <span class="label">Response</span>
             Within 24 hours
           </li>
         </ul>
@@ -66,7 +73,7 @@
         <form class="contact-form" name="contact" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <h3>Send a Message</h3>
-          <p>Tell us about your business and what you're looking for — we'll get back to you within 24 hours.</p>
+          <p>Tell us about your business and what you're looking for.</p>
 
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="email" placeholder="Your email address" required />
@@ -74,16 +81,20 @@
           <input type="tel" name="phone" placeholder="Phone number (optional)" />
 
           <select name="interest">
-            <option value="" disabled selected>What are you looking for?</option>
+            <option value="" disabled selected>What are you interested in?</option>
             <option>A new website for my business</option>
             <option>Redesign or update my existing website</option>
-            <option>Take over hosting and management of my site</option>
+            <option>Cloud security assessment</option>
+            <option>Cloud security monitoring (CSPM)</option>
+            <option>DevSecOps consulting</option>
+            <option>Compliance readiness (SOC 2, HIPAA)</option>
+            <option>Web + Security bundle</option>
             <option>Not sure yet — let's talk</option>
           </select>
 
-          <textarea name="message" placeholder="Tell us a bit about your business and what you need..."></textarea>
+          <textarea name="message" placeholder="Tell us about your business, your current setup, and what you're looking for..."></textarea>
 
-          <button type="submit">Send Message →</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
 
@@ -91,7 +102,13 @@
   </main>
 
   <footer>
-    <span class="footer-logo">GHOSTGRID_CYBER</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-logo">GHOSTGRID CYBER</span>
     <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
   </footer>

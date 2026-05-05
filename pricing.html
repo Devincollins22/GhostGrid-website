@@ -4,249 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GhostGrid Cyber – Pricing</title>
+  <meta name="description" content="Transparent pricing for GhostGrid Cyber's web design and cloud security services." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .price-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-      margin-bottom: 60px;
+    .pricing-note {
+      text-align: center;
+      max-width: 680px;
+      margin: -8px auto 48px;
+      font-size: 0.88rem;
+      color: var(--muted);
     }
 
-    .plan-single {
-      background: linear-gradient(160deg, #111, #1c1c1c);
-      border: 2px solid var(--green);
-      border-radius: 14px;
-      padding: 44px 40px 36px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: 0 0 32px rgba(0,255,170,0.12);
+    .pricing-grid {
+      max-width: 1100px;
     }
 
-    .plan-single .plan-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--green);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
+    .plan .plan-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
     }
 
-    .plan-single h3 {
-      font-size: 1.8rem;
+    .extras-section {
+      margin-top: 80px;
+    }
+
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .extra-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.25s;
+    }
+
+    .extra-card:hover {
+      border-color: var(--border-light);
+    }
+
+    .extra-card h3 {
       color: var(--text);
+      font-size: 1rem;
       margin-bottom: 6px;
     }
 
-    .plan-single .tagline {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .price-display {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
-
-    .price-display .amount {
+    .extra-card .extra-price {
       font-family: var(--mono);
-      font-size: 3.2rem;
+      font-size: 0.85rem;
       color: var(--green);
-      line-height: 1;
-    }
-
-    .price-display .per {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .setup-note {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: #555;
-      letter-spacing: 1px;
-      margin-bottom: 28px;
-    }
-
-    .plan-single ul {
-      border-top: 1px solid var(--border);
-      margin-bottom: 0;
-    }
-
-    .plan-single ul li {
-      padding: 11px 0 11px 24px;
-      border-bottom: 1px solid var(--border);
-      color: #ddd;
-      font-size: 0.93rem;
-    }
-
-    .plan-single ul li:last-child { border-bottom: none; }
-
-    .plan-single .plan-cta {
+      margin-bottom: 10px;
       display: block;
-      margin-top: 28px;
-      text-align: center;
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 14px;
-      border-radius: 6px;
-      background: var(--green);
-      color: #030f09;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-      box-shadow: 0 0 14px rgba(0,255,170,0.3);
     }
 
-    .plan-single .plan-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    .setup-breakdown {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--green);
-      border-radius: 10px;
-      padding: 28px 32px;
-      margin-bottom: 60px;
-    }
-
-    .setup-breakdown h3 { color: var(--green); margin-bottom: 16px; }
-
-    .faq-list {
-      margin-top: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .faq-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-q {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-family: var(--sans);
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 18px 22px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      transition: color 0.2s;
-    }
-
-    .faq-q:hover { color: var(--green); }
-
-    .faq-q .arrow {
-      font-size: 0.8rem;
-      color: var(--green);
-      transition: transform 0.25s;
-      flex-shrink: 0;
-    }
-
-    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
-
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.2s;
-      padding: 0 22px;
-      color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-a {
-      max-height: 300px;
-      padding: 0 22px 18px;
-    }
-
-    .cta-block {
-      text-align: center;
-      padding: 60px 32px;
-      background: linear-gradient(145deg, #0d1a12, #0a0a0a);
-      border: 1px solid rgba(0,255,170,0.2);
-      border-top: 3px solid var(--green);
-      border-radius: 14px;
-      margin-bottom: 40px;
-    }
-
-    .cta-block h2 { color: var(--green); margin-bottom: 12px; }
-    .cta-block p { max-width: 520px; margin: 0 auto 28px; }
-
-    .savings-section {
-      margin-bottom: 64px;
-    }
-
-    .savings-section p {
-      max-width: 680px;
-      font-size: 1rem;
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
-
-    .savings-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      max-width: 560px;
-      margin-top: 28px;
-    }
-
-    .savings-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.93rem;
-      color: var(--muted);
-      gap: 16px;
-    }
-
-    .savings-row:last-child { border-bottom: none; }
-
-    .savings-row .label { font-weight: 600; color: var(--text); white-space: nowrap; }
-    .savings-row .breakdown { font-family: var(--mono); font-size: 0.78rem; color: #555; }
-    .savings-row .total { font-family: var(--mono); font-weight: 700; white-space: nowrap; }
-
-    .savings-row.ghostgrid { background: rgba(0,255,170,0.06); }
-    .savings-row.ghostgrid .label,
-    .savings-row.ghostgrid .total { color: var(--green); }
-
-    .savings-row.you-save {
-      background: rgba(0,255,170,0.03);
-      justify-content: center;
-      font-family: var(--mono);
+    .extra-card p {
       font-size: 0.88rem;
-      color: var(--green);
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 768px) {
-      .plan-single { padding: 32px 24px; }
-      .price-display .amount { font-size: 2.6rem; }
-      .savings-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+      margin: 0;
     }
   </style>
 </head>
@@ -254,11 +72,17 @@
 
   <nav>
     <a href="index.html" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00ffaa">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00e89a">
         <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
       </svg>
       GHOSTGRID
     </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="contact.html" class="nav-cta">Get Started</a>
+    </div>
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
@@ -271,145 +95,171 @@
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">// Simple, Transparent Pricing</span>
-    <h2>One Plan.<br><span class="accent">Everything Included.</span></h2>
-    <p>No tiers, no hidden fees, no confusing add-ons. One flat monthly rate that covers everything your business needs online.</p>
+    <span class="hero-tag">Pricing</span>
+    <h2>Clear Plans.<br><span class="accent">No Hidden Fees.</span></h2>
+    <p>Choose the tier that fits your business. Every plan includes direct support from our team — no ticket queues, no runaround.</p>
   </header>
 
   <main>
 
-    <section class="savings-section">
-      <span class="section-tag">// Why GhostGrid</span>
-      <h2>You're Actually Saving Money.</h2>
-      <p>Most small businesses are already paying $150–200/mo between their website builder, domain, hosting, SSL certificate, and security tools — all bought separately from different companies with hidden fees and zero support.</p>
-      <p>GhostGrid bundles everything into one flat $99/mo — custom website, hosting, domain, SSL, security, and a real person you can actually call. No hidden fees. No surprises.</p>
+    <span class="section-tag">Plans</span>
+    <h2 style="text-align:center;">Choose Your Plan</h2>
+    <p class="pricing-note">All plans are month-to-month after setup. No long-term contracts. Cancel anytime.</p>
 
-      <div class="savings-box">
-        <div class="savings-row">
-          <span class="label">The other guys</span>
-          <span class="breakdown">Domain $15 + Hosting $25 + SSL $20 + Security $50 + Support $50</span>
-          <span class="total">$160+/mo</span>
+    <div class="pricing-grid">
+
+      <!-- TIER 1: WEB PRESENCE -->
+      <div class="plan">
+        <h3>Web Presence</h3>
+        <div class="price">$99 <span>/mo</span></div>
+        <p class="tagline">+ $499 one-time setup</p>
+        <ul>
+          <li>Custom website design & development</li>
+          <li>Domain registration & management</li>
+          <li>Managed hosting & uptime monitoring</li>
+          <li>SSL certificate (auto-renewed)</li>
+          <li>Monthly content updates</li>
+          <li>Contact form & spam protection</li>
+          <li>Basic security hardening</li>
+          <li>Direct support from Devin</li>
+        </ul>
+        <a href="contact.html" class="plan-btn">Get Started</a>
+      </div>
+
+      <!-- TIER 2: WEB + SECURITY -->
+      <div class="plan featured">
+        <span class="plan-badge">Most Popular</span>
+        <h3>Web + Security</h3>
+        <div class="price">$299 <span>/mo</span></div>
+        <p class="tagline">+ $999 one-time setup</p>
+        <ul>
+          <li>Everything in Web Presence</li>
+          <li>Cloud security posture monitoring</li>
+          <li>Monthly security reports & risk scoring</li>
+          <li>Misconfiguration detection & alerts</li>
+          <li>Basic compliance readiness support</li>
+          <li>CI/CD pipeline security review</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="contact.html" class="plan-btn">Get Started</a>
+      </div>
+
+      <!-- TIER 3: FULL SECURITY -->
+      <div class="plan">
+        <h3>Full Security</h3>
+        <div class="price">$599 <span>/mo</span></div>
+        <p class="tagline">+ $2,499 one-time setup</p>
+        <ul>
+          <li>Everything in Web + Security</li>
+          <li>Full CSPM across AWS, Azure, or GCP</li>
+          <li>DevSecOps pipeline integration</li>
+          <li>SOC 2 or HIPAA readiness program</li>
+          <li>Incident response planning</li>
+          <li>Infrastructure security assessments</li>
+          <li>Dedicated security advisor</li>
+        </ul>
+        <a href="contact.html" class="plan-btn">Get Started</a>
+      </div>
+
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="cta-block" style="margin-top:48px; margin-bottom: 80px;">
+      <span class="section-tag">Enterprise</span>
+      <h2>Need Something Custom?</h2>
+      <p>Larger environments, multi-cloud setups, advanced compliance requirements, or ongoing managed security — let's build a plan that fits your organization.</p>
+      <div class="btn-row">
+        <a href="contact.html" class="btn-primary">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <section class="extras-section">
+      <span class="section-tag">Add-Ons</span>
+      <h2>Additional Services</h2>
+      <p style="max-width:640px;">Need something specific? These can be added to any plan or purchased as standalone services.</p>
+
+      <div class="extras-grid">
+        <div class="extra-card">
+          <h3>Security Assessment</h3>
+          <span class="extra-price">Starting at $1,500</span>
+          <p>One-time audit of your cloud infrastructure with a detailed findings report and remediation plan.</p>
         </div>
-        <div class="savings-row ghostgrid">
-          <span class="label">GhostGrid</span>
-          <span class="breakdown">Everything above, included</span>
-          <span class="total">$99/mo</span>
+        <div class="extra-card">
+          <h3>Compliance Gap Analysis</h3>
+          <span class="extra-price">Starting at $2,000</span>
+          <p>Full gap analysis against SOC 2, HIPAA, or other frameworks with a prioritized roadmap.</p>
         </div>
-        <div class="savings-row you-save">
-          You save $60+/mo — that's $720+ a year.
+        <div class="extra-card">
+          <h3>Additional Web Pages</h3>
+          <span class="extra-price">$150 per page</span>
+          <p>Need more than the standard pages? Additional custom pages designed and deployed to match your site.</p>
+        </div>
+        <div class="extra-card">
+          <h3>E-Commerce Setup</h3>
+          <span class="extra-price">Starting at $799</span>
+          <p>Product listings, payment integration, and a secure checkout experience added to your website.</p>
         </div>
       </div>
     </section>
 
-    <span class="section-tag">// 01. THE PLAN</span>
-    <h2>GhostGrid Website Plan</h2>
+    <div class="section-divider"></div>
 
-    <div class="price-wrapper">
-      <div class="plan-single">
-        <span class="plan-label">// Monthly</span>
-        <h3>Everything You Need</h3>
-        <p class="tagline">Your website built, hosted, managed, and secured — all in one place.</p>
+    <!-- FAQ -->
+    <section>
+      <span class="section-tag">FAQ</span>
+      <h2>Common Questions</h2>
 
-        <div class="price-display">
-          <span class="amount">$99</span>
-          <span class="per">/mo updating fee</span>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do I own my website and domain? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">Yes — 100%. Your domain is registered in your name, your content is yours. If you ever leave GhostGrid, we hand everything over. No hostage situations.</div>
         </div>
-        <p class="setup-note">+ $499 one-time startup cost</p>
-
-        <ul>
-          <li>Custom website design & development</li>
-          <li>Domain registration & annual management</li>
-          <li>Managed hosting & uptime monitoring</li>
-          <li>HTTPS/SSL certificate — installed & auto-renewed</li>
-          <li>Monthly content updates</li>
-          <li>Contact form setup & spam protection</li>
-          <li>Basic website security best practices</li>
-          <li>Direct support from Devin Collins</li>
-        </ul>
-
-        <a href="contact.html" class="plan-cta">Book a Free Consultation</a>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does it take to get my site built? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">Most websites are live in 1-2 weeks from when we receive your content. Security engagements typically begin within the first week after onboarding.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Is there a long-term contract? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">No. After the initial setup, everything is month-to-month. We earn your business every month — cancel anytime, no questions asked.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I start with web and add security later? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">Absolutely. Many clients start with the Web Presence plan and upgrade to Web + Security or Full Security as their business grows. We make the transition seamless.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What cloud platforms do you support? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">We work with AWS, Microsoft Azure, and Google Cloud Platform. Our security tools and processes are platform-agnostic and can support multi-cloud environments.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What counts as a "content update"? <span class="arrow">▼</span>
+          </button>
+          <div class="faq-a">Anything that keeps your site current — updating hours, adding a new service, swapping a photo, changing a price, adding a team member. Just send an email and we handle it.</div>
+        </div>
       </div>
-    </div>
-
-    <span class="section-tag">// 02. THE SETUP FEE</span>
-    <h2>What the $499 Covers</h2>
-
-    <div class="setup-breakdown">
-      <h3>One-Time Startup Cost — $499</h3>
-      <p>Paid once when we start. This covers the work of getting everything built and configured before your first monthly billing.</p>
-      <ul>
-        <li>Custom site design and development</li>
-        <li>Domain purchase and DNS configuration</li>
-        <li>Hosting environment setup</li>
-        <li>SSL certificate installation</li>
-        <li>Contact form build and testing</li>
-        <li>Final review and launch</li>
-      </ul>
-    </div>
-
-    <span class="section-tag">// 03. FREE CONSULTATION</span>
-    <h2>Start with a Free 30-Minute Call</h2>
-    <p style="max-width:640px;">Before you spend anything, we talk. You'll learn exactly what you're getting, what we need from you to get started, and whether GhostGrid is the right fit. Zero pressure.</p>
-
-    <div style="background: var(--bg3); border: 1px solid #2a2a2a; border-radius: 12px; padding: 28px 32px; margin: 32px 0 60px;">
-      <ul>
-        <li>Free 30-minute video or phone call</li>
-        <li>We learn about your business and goals</li>
-        <li>You see exactly what you'd get before signing anything</li>
-        <li>No sales pressure — just an honest conversation</li>
-      </ul>
-    </div>
-
-    <span class="section-tag">// 04. COMMON QUESTIONS</span>
-    <h2>FAQ</h2>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do I own my website and domain? <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">Yes — 100%. Your domain is registered in your name, your content is yours. If you ever leave GhostGrid, we hand everything over. No hostage situations.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How long does it take to get my site built? <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">Most sites are live in 1–2 weeks from when we receive your content — your logo, photos, and any text you want on the site. We'll walk you through exactly what we need to move fast.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What if I already have a website? <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">No problem. We can take over management of your existing site, migrate it to our hosting, or rebuild it fresh — whatever makes the most sense for your situation. We'll figure that out together on the free call.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Is there a long-term contract? <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">No. After the initial setup, it's month-to-month. We earn your business every month, not once with a contract you can't get out of.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What counts as a "content update"? <span class="arrow">▼</span>
-        </button>
-        <div class="faq-a">Anything that keeps your site current — updating hours, adding a new service, swapping a photo, changing a price, adding a team member. Just send an email and we'll handle it.</div>
-      </div>
-    </div>
-
-    <div class="cta-block">
-      <span class="section-tag" style="display:block;margin-bottom:12px;">// Let's talk</span>
-      <h2>Book Your Free Consultation</h2>
-      <p>30 minutes, no pressure. We'll show you what your site could look like and what getting started actually costs — before you commit to anything.</p>
-      <div class="btn-row">
-        <a href="contact.html" class="btn-primary">Book a Free Call</a>
-        <a href="services.html" class="btn-secondary">View All Services</a>
-      </div>
-    </div>
+    </section>
 
   </main>
 
   <footer>
-    <span class="footer-logo">GHOSTGRID_CYBER</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-logo">GHOSTGRID CYBER</span>
     <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
   </footer>

@@ -24,13 +24,13 @@ if (form && !form.getAttribute("data-netlify")) {
     const btn = form.querySelector("button[type=submit]");
     btn.textContent = "Message Sent ✔";
     btn.style.background = "#0a0a0a";
-    btn.style.border = "2px solid #00ffaa";
-    btn.style.color = "#00ffaa";
+    btn.style.border = "2px solid #00e89a";
+    btn.style.color = "#00e89a";
     setTimeout(() => {
-      btn.textContent = "Send Message →";
-      btn.style.background = "#00ffaa";
+      btn.textContent = "Send Message";
+      btn.style.background = "#00e89a";
       btn.style.border = "none";
-      btn.style.color = "#030f09";
+      btn.style.color = "#09090b";
       form.reset();
     }, 3000);
   });

@@ -3,61 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GhostGrid Cyber – Website Design & Management for Small Businesses</title>
+  <title>GhostGrid Cyber – Cloud Security & Web Solutions for Growing Businesses</title>
+  <meta name="description" content="GhostGrid Cyber provides cloud security, DevSecOps, and professional web solutions for businesses in Buffalo, NY and beyond." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .steps {
+    .services-split {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
       margin-top: 40px;
     }
 
-    .step {
+    .service-block {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 24px;
-      position: relative;
-      transition: box-shadow 0.2s;
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: all 0.25s;
     }
 
-    .step:hover { box-shadow: 0 4px 20px var(--green-glow); }
+    .service-block:hover {
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+    }
 
-    .step-num {
+    .service-block .block-label {
       font-family: var(--mono);
-      font-size: 2.4rem;
+      font-size: 10px;
       color: var(--green);
-      line-height: 1;
-      margin-bottom: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .service-block h3 {
+      color: var(--text);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .service-block p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .service-block .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-block .feature-list span {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .service-block .feature-list span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--green);
       opacity: 0.6;
     }
 
-    .step h3 { color: var(--text); font-size: 1.15rem; margin-bottom: 10px; }
-    .step p { font-size: 0.93rem; margin: 0; }
-
-    .cta-block {
-      text-align: center;
-      padding: 60px 32px;
-      background: linear-gradient(145deg, #0d1a12, #0a0a0a);
-      border: 1px solid rgba(0,255,170,0.2);
-      border-top: 3px solid var(--green);
-      border-radius: 14px;
+    .service-block .block-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green);
     }
 
-    .cta-block h2 { color: var(--green); margin-bottom: 12px; }
-    .cta-block p { max-width: 520px; margin: 0 auto 28px; }
+    .service-block .block-link:hover { opacity: 0.8; }
+
+    @media (max-width: 768px) {
+      .services-split { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00ffaa">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00e89a">
         <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
       </svg>
       GHOSTGRID
     </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Get Started</a>
+    </div>
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
@@ -70,86 +117,159 @@
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">// Buffalo, NY · Website Design & Management for Small Businesses</span>
-    <h1>Your Business Deserves a<br><span class="accent">Website That Works.</span></h1>
-    <p>GhostGrid builds fast, secure, professionally designed websites for small businesses — then manages everything for you, month after month. One flat price. No surprises.</p>
+    <span class="hero-tag">Cloud Security & Web Solutions</span>
+    <h1>Build Your Business Online.<br><span class="accent">Keep It Secure.</span></h1>
+    <p>GhostGrid Cyber delivers professional web design and cloud security services for businesses that need a strong digital presence — and the infrastructure to protect it.</p>
     <div class="btn-row">
-      <a href="contact.html" class="btn-primary">Get a Free Consultation</a>
-      <a href="pricing.html" class="btn-secondary">See Pricing</a>
+      <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+      <a href="services.html" class="btn-secondary">Explore Services</a>
     </div>
+    <p class="hero-sub">Buffalo, NY &middot; Serving businesses locally and remotely</p>
   </header>
+
+  <div class="stats-bar" style="max-width:1100px; margin: 0 auto;">
+    <div class="stat">
+      <div class="num">100%</div>
+      <div class="label">Uptime SLA</div>
+    </div>
+    <div class="stat">
+      <div class="num">24hr</div>
+      <div class="label">Response Time</div>
+    </div>
+    <div class="stat">
+      <div class="num">HTTPS</div>
+      <div class="label">Secured by Default</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="label">Long-term Contracts</div>
+    </div>
+  </div>
 
   <main>
 
-    <section style="margin-bottom: 64px;">
-      <span class="section-tag">// 01. WHY GHOSTGRID</span>
-      <h2>What Makes Us Different</h2>
-      <p style="max-width:640px;">Most small businesses either can't afford a professional web presence or get handed a template and left on their own. GhostGrid closes that gap.</p>
-      <div class="why-grid">
-        <div class="why-card">
-          <h3>Rooted in IT</h3>
-          <p>Backed by the experience of CAC Computer Inc., a 12-year IT company serving Western New York. This craft runs in the family.</p>
+    <section style="margin-bottom: 80px;">
+      <span class="section-tag">What We Do</span>
+      <h2>Two Sides of the Same Mission</h2>
+      <p style="max-width:640px;">We help businesses build their digital presence and protect it. Whether you need a website, cloud security, or both — GhostGrid handles it under one roof.</p>
+
+      <div class="services-split">
+        <div class="service-block">
+          <span class="block-label">Web Solutions</span>
+          <h3>Design, Build & Manage</h3>
+          <p>Professional websites designed for your business, hosted and maintained so you never have to think about it.</p>
+          <div class="feature-list">
+            <span>Custom website design & development</span>
+            <span>Managed hosting & domain management</span>
+            <span>Monthly updates & content changes</span>
+            <span>SSL certificates & security hardening</span>
+            <span>Contact forms & lead capture</span>
+          </div>
+          <a href="services.html" class="block-link">View web services &rarr;</a>
         </div>
-        <div class="why-card">
-          <h3>Everything Included</h3>
-          <p>Custom design, hosting, domain management, security, and updates — $499 to start, then just $99/mo. Nothing hidden.</p>
-        </div>
-        <div class="why-card">
-          <h3>Security by Default</h3>
-          <p>Every site we build is HTTPS-secured and hardened from day one — not as an add-on, but as standard practice.</p>
-        </div>
-        <div class="why-card">
-          <h3>Direct Support</h3>
-          <p>You deal with Devin directly — not a help desk. Questions get real answers, fast.</p>
-        </div>
-        <div class="why-card">
-          <h3>You Own Everything</h3>
-          <p>Your domain, your content, your site. If you ever leave, we hand it all over. No hostage situations.</p>
-        </div>
-        <div class="why-card">
-          <h3>No Lock-In</h3>
-          <p>Month-to-month after setup. We earn your business every month, not once with a contract.</p>
+
+        <div class="service-block">
+          <span class="block-label">Cloud Security</span>
+          <h3>Monitor, Protect & Secure</h3>
+          <p>Cloud security posture management, DevSecOps consulting, and compliance support for businesses running in the cloud.</p>
+          <div class="feature-list">
+            <span>Cloud Security Posture Management (CSPM)</span>
+            <span>DevSecOps pipeline integration</span>
+            <span>Infrastructure security assessments</span>
+            <span>Compliance readiness (SOC 2, HIPAA)</span>
+            <span>Incident response & monitoring</span>
+          </div>
+          <a href="services.html" class="block-link">View security services &rarr;</a>
         </div>
       </div>
     </section>
 
-    <section style="margin-bottom: 64px;">
-      <span class="section-tag">// 02. HOW IT WORKS</span>
-      <h2>Three Steps to a Secure Website</h2>
-      <p style="max-width:640px;">We keep the process simple so you can get online fast — without learning anything technical.</p>
+    <section style="margin-bottom: 80px;">
+      <span class="section-tag">Why GhostGrid</span>
+      <h2>What Sets Us Apart</h2>
+      <p style="max-width:640px;">We combine hands-on technical experience with a straightforward approach to doing business. No jargon, no runaround — just solid work.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="card-icon">🔒</span>
+          <h3>Security-First Mindset</h3>
+          <p>Every website and cloud environment we touch is built with security as a foundation, not an afterthought.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">📞</span>
+          <h3>Direct Communication</h3>
+          <p>You talk to Devin directly. No ticket queues, no call centers — real answers from the person doing the work.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">📋</span>
+          <h3>Transparent Pricing</h3>
+          <p>Clear pricing with no hidden fees. You know what you're paying for before you sign anything.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🔑</span>
+          <h3>You Own Everything</h3>
+          <p>Your domain, your code, your data. If you leave, everything goes with you. No lock-in, ever.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">⚡</span>
+          <h3>IT Roots</h3>
+          <p>Backed by the experience of CAC Computer Inc., a 12-year IT company serving Western New York.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">📆</span>
+          <h3>Month-to-Month</h3>
+          <p>No long-term contracts. We earn your business every month. Cancel anytime, no questions asked.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 80px;">
+      <span class="section-tag">How It Works</span>
+      <h2>Getting Started Is Simple</h2>
+      <p style="max-width:640px;">We keep the process clean so you can get what you need without dealing with unnecessary complexity.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <h3>Free Consultation</h3>
-          <p>30 minutes. We learn about your business, your goals, and what you need. No pressure, no pitch — just an honest conversation.</p>
+          <h3>Discovery Call</h3>
+          <p>We learn about your business, your goals, and what you need. 30 minutes, no cost, no pressure.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>We Build Your Site</h3>
-          <p>Custom design, mobile-ready, security built in from the start. Most sites are live in 1–2 weeks from when we receive your content.</p>
+          <h3>Scope & Proposal</h3>
+          <p>You get a clear proposal outlining exactly what we'll deliver, when, and for how much. No surprises.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h3>We Handle the Rest</h3>
-          <p>Monthly updates, hosting, domain renewals, and security — all managed for you. You focus on your business. We keep you online.</p>
+          <h3>Build & Deploy</h3>
+          <p>We do the work — build your site, configure your security, and get everything live. Most web projects ship in 1-2 weeks.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Ongoing Management</h3>
+          <p>We handle updates, monitoring, and maintenance on an ongoing basis. You focus on running your business.</p>
         </div>
       </div>
     </section>
 
     <div class="cta-block">
-      <span class="section-tag" style="display:block;margin-bottom:12px;">// Ready to get started?</span>
-      <h2>Let's Build Something.</h2>
-      <p>Book a free 30-minute consultation. We'll show you exactly what you'd get before you spend a dollar.</p>
+      <span class="section-tag">Ready to Start?</span>
+      <h2>Let's Talk About What You Need</h2>
+      <p>Book a free consultation. We'll walk through your situation and show you exactly how GhostGrid can help — before you commit to anything.</p>
       <div class="btn-row">
-        <a href="contact.html" class="btn-primary">Book a Free Consultation</a>
-        <a href="services.html" class="btn-secondary">View Services</a>
+        <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+        <a href="pricing.html" class="btn-secondary">View Pricing</a>
       </div>
     </div>
 
   </main>
 
   <footer>
-    <span class="footer-logo">GHOSTGRID_CYBER</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-logo">GHOSTGRID CYBER</span>
     <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
   </footer>

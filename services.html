@@ -4,31 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GhostGrid Cyber – Services</title>
+  <meta name="description" content="Web design, cloud security, DevSecOps, and CSPM services from GhostGrid Cyber." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .cta-block {
-      text-align: center;
-      padding: 60px 32px;
-      background: linear-gradient(145deg, #0d1a12, #0a0a0a);
-      border: 1px solid rgba(0,255,170,0.2);
-      border-top: 3px solid var(--green);
-      border-radius: 14px;
-      margin-top: 60px;
+    .services-section { margin-bottom: 80px; }
+
+    .services-section > p {
+      max-width: 640px;
+      margin-bottom: 0;
     }
 
-    .cta-block h2 { color: var(--green); margin-bottom: 12px; }
-    .cta-block p { max-width: 520px; margin: 0 auto 28px; }
+    .service-card h3 .badge {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--green-dim);
+      color: var(--green);
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="logo">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00ffaa">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00e89a">
         <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
       </svg>
       GHOSTGRID
     </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" class="nav-cta">Get Started</a>
+    </div>
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
@@ -41,87 +54,150 @@
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">// What We Do</span>
-    <h2>Professional Web Services for<br><span class="accent">Small Businesses</span></h2>
-    <p>From first design to ongoing management, GhostGrid handles every part of your website so you can stay focused on running your business.</p>
+    <span class="hero-tag">Our Services</span>
+    <h2>Web Design & Cloud Security<br><span class="accent">Under One Roof</span></h2>
+    <p>From building your online presence to securing your cloud infrastructure — GhostGrid delivers the technical services your business needs to grow and stay protected.</p>
   </header>
 
   <main>
 
-    <span class="section-tag">// 01. SERVICES</span>
-    <h2>What's Included</h2>
-    <p style="max-width:640px; margin-bottom: 0;">Everything below is covered under GhostGrid's plan — $499 to start, then $99/mo. No picking and choosing. No add-on fees for the basics.</p>
+    <!-- WEB SERVICES -->
+    <section class="services-section">
+      <span class="section-tag">Web Solutions</span>
+      <h2>Web Design & Management</h2>
+      <p>Professional websites built, hosted, and maintained for you. No templates, no page builders — clean, custom code designed around your business.</p>
 
-    <div class="services-grid">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><span class="card-icon">🎨</span> Custom Website Design</h3>
+          <ul>
+            <li>Professionally designed, unique to your brand</li>
+            <li>Mobile-responsive on every screen size</li>
+            <li>Fast load times and clean, modern code</li>
+            <li>Built around what your customers need to see</li>
+            <li>Live in 1-2 weeks from receiving your content</li>
+          </ul>
+        </div>
 
-      <div class="service-card">
-        <h3>Custom Website Design & Development</h3>
-        <ul>
-          <li>Professionally designed, unique to your brand</li>
-          <li>Mobile-responsive on every screen size</li>
-          <li>Fast load times and clean, modern code</li>
-          <li>Built around what your customers need to see</li>
-          <li>Live in 1–2 weeks from receiving your content</li>
-        </ul>
+        <div class="service-card">
+          <h3><span class="card-icon">🌐</span> Hosting & Domain Management</h3>
+          <ul>
+            <li>Reliable managed hosting included</li>
+            <li>Domain registration and annual renewal handled</li>
+            <li>DNS configuration and management</li>
+            <li>Uptime monitoring so your site stays online</li>
+            <li>No separate hosting bills</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">🔄</span> Ongoing Maintenance</h3>
+          <ul>
+            <li>Content updates whenever your business changes</li>
+            <li>Software and platform updates</li>
+            <li>Regular backups so your work is never lost</li>
+            <li>Just send an email — we handle the rest</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">🔒</span> Website Security & SSL</h3>
+          <ul>
+            <li>HTTPS/SSL certificate installed and auto-renewed</li>
+            <li>Security headers and best practices built in</li>
+            <li>Protection against common web vulnerabilities</li>
+            <li>Fast response if something looks off</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <h3>Website Hosting & Domain Management</h3>
-        <ul>
-          <li>Reliable managed hosting — no server knowledge needed</li>
-          <li>Domain registration and annual renewal handled for you</li>
-          <li>DNS configuration and management included</li>
-          <li>Uptime monitoring so your site stays online</li>
-          <li>All included — no separate hosting bills</li>
-        </ul>
+    <div class="section-divider"></div>
+
+    <!-- CLOUD SECURITY SERVICES -->
+    <section class="services-section">
+      <span class="section-tag">Cloud Security</span>
+      <h2>Protect Your Cloud Infrastructure</h2>
+      <p>Proactive cloud security services that help you find misconfigurations, harden your environment, and stay compliant — before problems turn into breaches.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><span class="card-icon">🛡️</span> Cloud Security Posture Management</h3>
+          <ul>
+            <li>Continuous monitoring of AWS, Azure, and GCP environments</li>
+            <li>Misconfiguration detection and remediation</li>
+            <li>Security policy enforcement across your cloud</li>
+            <li>Monthly posture reports and risk scoring</li>
+            <li>Automated alerts for critical findings</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">⚙️</span> DevSecOps Integration</h3>
+          <ul>
+            <li>Security scanning in your CI/CD pipelines</li>
+            <li>Infrastructure as Code (IaC) security reviews</li>
+            <li>Container and image vulnerability scanning</li>
+            <li>Secrets management and detection</li>
+            <li>Developer security training and best practices</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">📋</span> Compliance Readiness</h3>
+          <ul>
+            <li>SOC 2 readiness assessments and gap analysis</li>
+            <li>HIPAA security rule compliance support</li>
+            <li>Policy and documentation development</li>
+            <li>Audit preparation and evidence gathering</li>
+            <li>Ongoing compliance monitoring</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">🚨</span> Incident Response & Monitoring</h3>
+          <ul>
+            <li>Security incident response planning</li>
+            <li>24/7 monitoring and alerting setup</li>
+            <li>Threat detection and investigation</li>
+            <li>Post-incident analysis and remediation</li>
+            <li>Breach readiness assessments</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">🔍</span> Security Assessments</h3>
+          <ul>
+            <li>Cloud infrastructure security audits</li>
+            <li>Network and access control reviews</li>
+            <li>Identity and access management (IAM) assessment</li>
+            <li>Data protection and encryption review</li>
+            <li>Actionable findings with remediation guidance</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="service-card">
-        <h3>Monthly Maintenance & Updates</h3>
-        <ul>
-          <li>Content updates whenever your business changes</li>
-          <li>Software and platform updates to keep things running</li>
-          <li>Regular backups so your work is never lost</li>
-          <li>Just send an email — we handle the rest</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <h3>Basic Website Security & SSL</h3>
-        <ul>
-          <li>HTTPS/SSL certificate installed and auto-renewed</li>
-          <li>Security headers and best practices built in by default</li>
-          <li>Protection against common web vulnerabilities</li>
-          <li>Fast response if something looks off</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <h3>Contact Form Setup</h3>
-        <ul>
-          <li>Professional contact form so customers can reach you</li>
-          <li>Submissions delivered straight to your inbox</li>
-          <li>Spam filtering included</li>
-          <li>Styled to match your site — not a generic embed</li>
-        </ul>
-      </div>
-
-    </div>
+    </section>
 
     <div class="cta-block">
-      <span class="section-tag" style="display:block;margin-bottom:12px;">// Start here</span>
+      <span class="section-tag">Next Step</span>
       <h2>Not Sure What You Need?</h2>
-      <p>Book a free 30-minute call. We'll walk through your business, your current situation, and exactly how GhostGrid fits — no pressure.</p>
+      <p>Book a free consultation. We'll walk through your business, your current setup, and figure out exactly what makes sense — no pressure, no pitch.</p>
       <div class="btn-row">
-        <a href="contact.html" class="btn-primary">Book a Free Consultation</a>
-        <a href="pricing.html" class="btn-secondary">See Pricing</a>
+        <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
+        <a href="pricing.html" class="btn-secondary">View Pricing</a>
       </div>
     </div>
 
   </main>
 
   <footer>
-    <span class="footer-logo">GHOSTGRID_CYBER</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span class="footer-logo">GHOSTGRID CYBER</span>
     <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
   </footer>
