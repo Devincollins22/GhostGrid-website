@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GhostGrid Cyber – Services</title>
-  <meta name="description" content="Web design, cloud security, DevSecOps, and CSPM services from GhostGrid Cyber." />
+  <meta name="description" content="AI-powered AWS vulnerability scanning and cloud security consulting from GhostGrid Cyber." />
   <link rel="stylesheet" href="style.css" />
   <style>
     .services-section { margin-bottom: 80px; }
@@ -55,58 +55,71 @@
 
   <header class="hero">
     <span class="hero-tag">Our Services</span>
-    <h2>Web Design & Cloud Security<br><span class="accent">Under One Roof</span></h2>
-    <p>From building your online presence to securing your cloud infrastructure — GhostGrid delivers the technical services your business needs to grow and stay protected.</p>
+    <h2>AWS Security Scanning<br><span class="accent">& Consulting</span></h2>
+    <p>We find the vulnerabilities in your AWS environment and give you a clear path to fix them — with AI-powered scanning and hands-on security expertise.</p>
   </header>
 
   <main>
 
-    <!-- WEB SERVICES -->
+    <!-- AWS SECURITY SCANNING -->
     <section class="services-section">
-      <span class="section-tag">Web Solutions</span>
-      <h2>Web Design & Management</h2>
-      <p>Professional websites built, hosted, and maintained for you. No templates, no page builders — clean, custom code designed around your business.</p>
+      <span class="section-tag">Scanning</span>
+      <h2>AI-Powered AWS Vulnerability Scanning</h2>
+      <p>Our custom-built scanner checks your AWS environment for misconfigurations and security risks across IAM, S3, EC2, and networking — then uses AI to prioritize what matters most.</p>
 
       <div class="services-grid">
         <div class="service-card">
-          <h3><span class="card-icon">🎨</span> Custom Website Design</h3>
+          <h3><span class="card-icon">🔑</span> IAM & Access Key Analysis</h3>
           <ul>
-            <li>Professionally designed, unique to your brand</li>
-            <li>Mobile-responsive on every screen size</li>
-            <li>Fast load times and clean, modern code</li>
-            <li>Built around what your customers need to see</li>
-            <li>Live in 1-2 weeks from receiving your content</li>
+            <li>Root account MFA verification</li>
+            <li>User MFA enforcement checks</li>
+            <li>Stale access key detection (90+ days)</li>
+            <li>Overly permissive policy identification</li>
+            <li>Inline policy audit</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <h3><span class="card-icon">🌐</span> Hosting & Domain Management</h3>
+          <h3><span class="card-icon">🪣</span> S3 Bucket Security</h3>
           <ul>
-            <li>Reliable managed hosting included</li>
-            <li>Domain registration and annual renewal handled</li>
-            <li>DNS configuration and management</li>
-            <li>Uptime monitoring so your site stays online</li>
-            <li>No separate hosting bills</li>
+            <li>Public access block verification</li>
+            <li>Bucket policy analysis for open access</li>
+            <li>Encryption configuration checks</li>
+            <li>Versioning and access logging audit</li>
+            <li>Data exposure risk assessment</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <h3><span class="card-icon">🔄</span> Ongoing Maintenance</h3>
+          <h3><span class="card-icon">🖥️</span> EC2 & Network Configuration</h3>
           <ul>
-            <li>Content updates whenever your business changes</li>
-            <li>Software and platform updates</li>
-            <li>Regular backups so your work is never lost</li>
-            <li>Just send an email — we handle the rest</li>
+            <li>IMDSv1 detection (SSRF vulnerability)</li>
+            <li>Public IP exposure checks</li>
+            <li>Unencrypted EBS volume detection</li>
+            <li>Default security group audit</li>
+            <li>Instance metadata security review</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <h3><span class="card-icon">🔒</span> Website Security & SSL</h3>
+          <h3><span class="card-icon">🌐</span> Security Group Audit</h3>
           <ul>
-            <li>HTTPS/SSL certificate installed and auto-renewed</li>
-            <li>Security headers and best practices built in</li>
-            <li>Protection against common web vulnerabilities</li>
-            <li>Fast response if something looks off</li>
+            <li>Open SSH/RDP port detection</li>
+            <li>Unrestricted database port checks</li>
+            <li>Overly permissive ingress rules</li>
+            <li>Egress control analysis</li>
+            <li>Port-by-port risk breakdown</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3><span class="card-icon">🤖</span> AI-Powered Analysis</h3>
+          <ul>
+            <li>Attack path mapping across findings</li>
+            <li>Risk-prioritized remediation plans</li>
+            <li>Executive summary for stakeholders</li>
+            <li>Severity scoring and trend tracking</li>
+            <li>Plain-language explanations of technical issues</li>
           </ul>
         </div>
       </div>
@@ -114,65 +127,43 @@
 
     <div class="section-divider"></div>
 
-    <!-- CLOUD SECURITY SERVICES -->
+    <!-- SECURITY CONSULTING -->
     <section class="services-section">
-      <span class="section-tag">Cloud Security</span>
-      <h2>Protect Your Cloud Infrastructure</h2>
-      <p>Proactive cloud security services that help you find misconfigurations, harden your environment, and stay compliant — before problems turn into breaches.</p>
+      <span class="section-tag">Consulting</span>
+      <h2>Security Consulting & Remediation</h2>
+      <p>Hands-on help understanding your scan results, fixing what's broken, and building a stronger security posture going forward.</p>
 
       <div class="services-grid">
         <div class="service-card">
-          <h3><span class="card-icon">🛡️</span> Cloud Security Posture Management</h3>
+          <h3><span class="card-icon">🛡️</span> Security Posture Review</h3>
           <ul>
-            <li>Continuous monitoring of AWS, Azure, and GCP environments</li>
-            <li>Misconfiguration detection and remediation</li>
-            <li>Security policy enforcement across your cloud</li>
-            <li>Monthly posture reports and risk scoring</li>
-            <li>Automated alerts for critical findings</li>
+            <li>Full walkthrough of scan findings</li>
+            <li>Risk prioritization for your specific environment</li>
+            <li>Architecture review and recommendations</li>
+            <li>Monthly posture reports and scoring</li>
+            <li>Progress tracking over time</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <h3><span class="card-icon">⚙️</span> DevSecOps Integration</h3>
+          <h3><span class="card-icon">🔧</span> Remediation Support</h3>
           <ul>
-            <li>Security scanning in your CI/CD pipelines</li>
-            <li>Infrastructure as Code (IaC) security reviews</li>
-            <li>Container and image vulnerability scanning</li>
-            <li>Secrets management and detection</li>
-            <li>Developer security training and best practices</li>
+            <li>Step-by-step fix guidance for every finding</li>
+            <li>Hands-on remediation assistance</li>
+            <li>Configuration hardening implementation</li>
+            <li>Post-fix verification scanning</li>
+            <li>Best practices documentation</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <h3><span class="card-icon">📋</span> Compliance Readiness</h3>
+          <h3><span class="card-icon">📊</span> Ongoing Monitoring</h3>
           <ul>
-            <li>SOC 2 readiness assessments and gap analysis</li>
-            <li>HIPAA security rule compliance support</li>
-            <li>Policy and documentation development</li>
-            <li>Audit preparation and evidence gathering</li>
-            <li>Ongoing compliance monitoring</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <h3><span class="card-icon">🚨</span> Incident Response & Monitoring</h3>
-          <ul>
-            <li>Security incident response planning</li>
-            <li>24/7 monitoring and alerting setup</li>
-            <li>Threat detection and investigation</li>
-            <li>Post-incident analysis and remediation</li>
-            <li>Breach readiness assessments</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <h3><span class="card-icon">🔍</span> Security Assessments</h3>
-          <ul>
-            <li>Cloud infrastructure security audits</li>
-            <li>Network and access control reviews</li>
-            <li>Identity and access management (IAM) assessment</li>
-            <li>Data protection and encryption review</li>
-            <li>Actionable findings with remediation guidance</li>
+            <li>Scheduled recurring scans</li>
+            <li>New misconfiguration alerts</li>
+            <li>Security drift detection</li>
+            <li>Monthly reports delivered to your inbox</li>
+            <li>Direct access to your security engineer</li>
           </ul>
         </div>
       </div>
