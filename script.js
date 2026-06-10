@@ -16,22 +16,3 @@ window.addEventListener("click", function (e) {
   }
 });
 
-// Contact form feedback (for non-Netlify fallback)
-const form = document.querySelector("form.contact-form");
-if (form && !form.getAttribute("data-netlify")) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const btn = form.querySelector("button[type=submit]");
-    btn.textContent = "Message Sent ✔";
-    btn.style.background = "#0a0a0a";
-    btn.style.border = "2px solid #00e89a";
-    btn.style.color = "#00e89a";
-    setTimeout(() => {
-      btn.textContent = "Send Message";
-      btn.style.background = "#00e89a";
-      btn.style.border = "none";
-      btn.style.color = "#09090b";
-      form.reset();
-    }, 3000);
-  });
-}
