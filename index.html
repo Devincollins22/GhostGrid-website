@@ -4,11 +4,11 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GhostGrid Cyber – AI-Powered AWS Security for Growing Businesses</title>
-  <meta name="description" content="GhostGrid Cyber provides AI-powered AWS vulnerability scanning and cloud security consulting for startups and SMBs." />
+  <title>Devin Collins – Cloud Security & DevSecOps | Founder, GhostGrid Cyber</title>
+  <meta name="description" content="Devin Collins is a cybersecurity engineer building hands-on skills in AWS security and DevSecOps, and founder of GhostGrid Cyber, an AWS security consultancy for growing businesses." />
   <link rel="stylesheet" href="style.css" />
   <style>
     .services-split {
@@ -89,6 +89,21 @@
 
     .service-block .block-link:hover { opacity: 0.8; }
 
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      background: var(--green-dim);
+      border: 1px solid rgba(0,232,154,0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
     @media (max-width: 768px) {
       .services-split { grid-template-columns: 1fr; }
     }
@@ -105,63 +120,103 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html" class="nav-cta">Get Started</a>
+      <a href="#about">About</a>
+      <a href="#ghostgrid">GhostGrid Cyber</a>
+      <a href="contact.html" class="nav-cta">Get In Touch</a>
     </div>
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
         <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#ghostgrid">GhostGrid Cyber</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">AWS Cloud Security</span>
-    <h1>Find Vulnerabilities.<br><span class="accent">Before Attackers Do.</span></h1>
-    <p>GhostGrid Cyber uses AI-powered scanning to find misconfigurations in your AWS environment — then gives you a clear plan to fix them before they become breaches.</p>
+    <span class="hero-tag">Cloud Security &middot; DevSecOps &middot; Buffalo, NY</span>
+    <h1>Learning to Secure the Cloud.<br><span class="accent">Building the Company That Will.</span></h1>
+    <p>I'm Devin Collins, a cybersecurity engineer developing hands-on skills in AWS security and DevSecOps. My goal is to help companies lock down their cloud infrastructure — and eventually run the firm that does it. GhostGrid Cyber is where that starts.</p>
     <div class="btn-row">
-      <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
-      <a href="services.html" class="btn-secondary">Explore Services</a>
+      <a href="contact.html" class="btn-primary">Get In Touch</a>
+      <a href="#ghostgrid" class="btn-secondary">See What I'm Building</a>
     </div>
-    <p class="hero-sub">Buffalo, NY &middot; Serving businesses locally and remotely</p>
+    <p class="hero-sub">ISC2 Certified in Cybersecurity (CC) &middot; M.S. Cybersecurity, Canisius University &middot; Buffalo, NY</p>
   </header>
 
   <div class="stats-bar" style="max-width:1100px; margin: 0 auto;">
     <div class="stat">
-      <div class="num">AI</div>
-      <div class="label">Powered Scanning</div>
+      <div class="num">CC</div>
+      <div class="label">ISC2 Certified in Cybersecurity</div>
     </div>
     <div class="stat">
-      <div class="num">24hr</div>
-      <div class="label">Response Time</div>
+      <div class="num">M.S.</div>
+      <div class="label">Cybersecurity, Canisius University</div>
     </div>
     <div class="stat">
       <div class="num">AWS</div>
-      <div class="label">Focused Security</div>
+      <div class="label">Cloud Security Focus</div>
     </div>
     <div class="stat">
-      <div class="num">0</div>
-      <div class="label">Long-term Contracts</div>
+      <div class="num">12yr</div>
+      <div class="label">IT Roots via CAC Computer Inc.</div>
     </div>
   </div>
 
   <main>
 
-    <section style="margin-bottom: 80px;">
-      <span class="section-tag">What We Do</span>
-      <h2>AWS Security Scanning & Consulting</h2>
-      <p style="max-width:640px;">We help businesses find and fix security issues in their AWS environments. Whether you need a one-time scan or ongoing security support, GhostGrid has you covered.</p>
+    <section id="about" style="margin-bottom: 80px;">
+      <span class="section-tag">The Journey</span>
+      <h2>From IT Support to Cloud Security</h2>
+      <p style="max-width:640px;">I grew up around CAC Computer Inc., my family's IT company that's served Western New York for 12 years — so troubleshooting and fixing real infrastructure isn't new to me. What's new is where I've pointed that experience: earning an M.S. in Cybersecurity at Canisius University, passing the ISC2 Certified in Cybersecurity (CC) exam, and now going deep on AWS security and DevSecOps — IAM, network configuration, secure pipelines, and the practical work of hardening cloud environments.</p>
+      <p style="max-width:640px;">The long-term plan is straightforward: keep building real skills, keep taking on real AWS security work, and grow that into a company that manages cloud security for other businesses.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="card-icon">☁️</span>
+          <h3>AWS Security</h3>
+          <p>Hands-on work with IAM policies, S3 configuration, EC2 hardening, and security group audits.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🔁</span>
+          <h3>DevSecOps</h3>
+          <p>Building security into the pipeline, not bolting it on after — currently studying CI/CD security practices.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🎯</span>
+          <h3>ISC2 Certified (CC)</h3>
+          <p>Passed the ISC2 Certified in Cybersecurity exam — foundational security concepts, network security, and incident response.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🎓</span>
+          <h3>M.S. Cybersecurity</h3>
+          <p>Canisius University — academic grounding in security fundamentals paired with real-world client work.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🤖</span>
+          <h3>AI-Assisted Analysis</h3>
+          <p>Building tooling that uses AI to help prioritize and explain security findings, not just list them.</p>
+        </div>
+        <div class="why-card">
+          <span class="card-icon">🛠️</span>
+          <h3>12 Years of IT Roots</h3>
+          <p>Backed by real infrastructure experience through CAC Computer Inc., not just certifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ghostgrid" style="margin-bottom: 80px;">
+      <span class="section-tag">What I'm Building</span>
+      <h2>GhostGrid Cyber</h2>
+      <p style="max-width:640px;">GhostGrid Cyber is the AWS security consultancy I'm building — an AI-assisted vulnerability scanner paired with hands-on remediation help for small businesses. It's a live project and the first step toward the company I want to run.</p>
 
       <div class="services-split">
         <div class="service-block">
           <span class="block-label">Scanning</span>
           <h3>AI-Powered Vulnerability Scanning</h3>
-          <p>Our custom-built scanner checks your AWS environment for misconfigurations and security risks, then uses AI to prioritize what matters most.</p>
+          <p>A custom-built scanner that checks AWS environments for misconfigurations and security risks, then uses AI to prioritize what matters most.</p>
           <div class="feature-list">
             <span>IAM policy & access key analysis</span>
             <span>S3 bucket security checks</span>
@@ -169,98 +224,60 @@
             <span>Security group audit</span>
             <span>AI-generated remediation reports</span>
           </div>
-          <a href="services.html" class="block-link">View scanning services &rarr;</a>
+          <a href="contact.html" class="block-link">Ask about scanning &rarr;</a>
         </div>
 
         <div class="service-block">
           <span class="block-label">Consulting</span>
           <h3>Security Consulting & Remediation</h3>
-          <p>Hands-on help hardening your AWS environment. We walk you through every finding and help you fix it — or fix it for you.</p>
+          <p>Hands-on help hardening AWS environments — walking clients through every finding and fixing it with them, or for them.</p>
           <div class="feature-list">
             <span>Infrastructure security assessments</span>
             <span>Remediation guidance & implementation</span>
             <span>Security best practices & hardening</span>
-            <span>Ongoing monitoring & monthly reports</span>
-            <span>Direct access to your security engineer</span>
+            <span>Direct access to me, not a ticket queue</span>
+            <span>Month-to-month, no long-term lock-in</span>
           </div>
-          <a href="services.html" class="block-link">View consulting services &rarr;</a>
+          <a href="contact.html" class="block-link">Ask about consulting &rarr;</a>
         </div>
       </div>
     </section>
 
     <section style="margin-bottom: 80px;">
-      <span class="section-tag">Why GhostGrid</span>
-      <h2>What Sets Us Apart</h2>
-      <p style="max-width:640px;">We combine hands-on technical experience with a straightforward approach to doing business. No jargon, no runaround — just solid work.</p>
-      <div class="why-grid">
-        <div class="why-card">
-          <span class="card-icon">🤖</span>
-          <h3>AI-Powered Analysis</h3>
-          <p>Our scanner doesn't just find issues — it uses AI to map attack paths and prioritize what to fix first.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">📞</span>
-          <h3>Direct Communication</h3>
-          <p>You talk to Devin directly. No ticket queues, no call centers — real answers from the person doing the work.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">📋</span>
-          <h3>Transparent Pricing</h3>
-          <p>Clear pricing with no hidden fees. You know what you're paying for before you sign anything.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">🔍</span>
-          <h3>Real Findings, Not Noise</h3>
-          <p>We focus on misconfigurations that actually matter — not hundreds of low-priority alerts that waste your time.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">⚡</span>
-          <h3>IT Roots</h3>
-          <p>Backed by the experience of CAC Computer Inc., a 12-year IT company serving Western New York.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">📆</span>
-          <h3>Month-to-Month</h3>
-          <p>No long-term contracts. We earn your business every month. Cancel anytime, no questions asked.</p>
-        </div>
-      </div>
-    </section>
-
-    <section style="margin-bottom: 80px;">
-      <span class="section-tag">How It Works</span>
-      <h2>Getting Started Is Simple</h2>
-      <p style="max-width:640px;">We keep the process clean so you can get what you need without dealing with unnecessary complexity.</p>
+      <span class="section-tag">Where This Is Headed</span>
+      <h2>The Path I'm On</h2>
+      <p style="max-width:640px;">I'm early in this journey, and I'm building in the open. Here's the roadmap.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <h3>Discovery Call</h3>
-          <p>We learn about your AWS setup, your concerns, and what you need. 30 minutes, no cost, no pressure.</p>
+          <h3>Learn & Certify</h3>
+          <p>ISC2 CC is done. AWS security certifications and deeper DevSecOps skills are next.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>Initial Scan</h3>
-          <p>We run our AI-powered scanner against your AWS environment and identify misconfigurations, risks, and vulnerabilities.</p>
+          <h3>Build in Public</h3>
+          <p>Developing GhostGrid's AI-assisted AWS scanner and taking on real consulting engagements.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h3>Report & Remediation Plan</h3>
-          <p>You get a clear report with prioritized findings and a step-by-step plan to fix them. We walk you through everything.</p>
+          <h3>Secure Real Environments</h3>
+          <p>Hands-on work hardening client AWS infrastructure — the experience that no course can substitute for.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <h3>Ongoing Monitoring</h3>
-          <p>We run regular scans, track your security posture over time, and flag new issues before they become problems.</p>
+          <h3>Scale the Company</h3>
+          <p>Grow GhostGrid from a solo practice into a company that manages cloud security for other businesses.</p>
         </div>
       </div>
     </section>
 
     <div class="cta-block">
-      <span class="section-tag">Ready to Start?</span>
-      <h2>Let's Talk About What You Need</h2>
-      <p>Book a free consultation. We'll walk through your situation and show you exactly how GhostGrid can help — before you commit to anything.</p>
+      <span class="section-tag">Let's Connect</span>
+      <h2>Hiring, Collaborating, or Just Curious?</h2>
+      <p>Whether you're looking to bring cloud security skills onto your team, need help hardening an AWS environment, or just want to connect with someone building in this space — I'd like to hear from you.</p>
       <div class="btn-row">
-        <a href="contact.html" class="btn-primary">Schedule a Consultation</a>
-        <a href="pricing.html" class="btn-secondary">View Pricing</a>
+        <a href="contact.html" class="btn-primary">Get In Touch</a>
+        <a href="#ghostgrid" class="btn-secondary">Learn About GhostGrid</a>
       </div>
     </div>
 
@@ -269,8 +286,8 @@
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#ghostgrid">GhostGrid Cyber</a>
       <a href="contact.html">Contact</a>
     </div>
     <span class="footer-logo">GHOSTGRID CYBER</span>

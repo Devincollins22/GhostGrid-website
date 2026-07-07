@@ -1,13 +1,8 @@
-# GhostGrid – Cybersecurity MSSP
+# GhostGrid – Personal Site
 
-**GhostGrid** is a modern, solo-run Managed Security Service Provider (MSSP) focused on delivering lightweight, effective cybersecurity services for individuals, families, and small businesses.
+Personal site for **Devin Collins** — cybersecurity engineer building hands-on skills in AWS security and DevSecOps, ISC2 Certified in Cybersecurity (CC), and founder of **GhostGrid Cyber**, an AWS security consultancy for small businesses.
 
-We help clients stay protected with real-time threat monitoring, endpoint hardening, and monthly security checkups — all with a personal touch.
-
-## 🔐 Services Offered
-
-### ✅ GhostGrid Core 
-- Start up and will provide Managed Security Services for small business: Subcontractor for CAC INC.
+Two pages: a homepage covering background, focus areas, and the GhostGrid venture, and a contact page for reaching out about roles, collaboration, or consulting work.
 
 ## 🌐 Website
 
