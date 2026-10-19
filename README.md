@@ -1,6 +1,6 @@
 # GhostGrid – Personal Site
 
-Personal site for **Devin Collins** — cybersecurity engineer building hands-on skills in AWS security and DevSecOps, ISC2 Certified in Cybersecurity (CC), and founder of **GhostGrid Cyber**, an Azure security consultancy for small businesses.
+Personal site for **Devin Collins** — cybersecurity engineer building hands-on skills in Azure security and DevSecOps, ISC2 Certified in Cybersecurity (CC), and founder of **GhostGrid Cyber**, an Azure security consultancy for small businesses.
 
 Two pages: a homepage covering background, focus areas, and the GhostGrid venture, and a contact page for reaching out about roles, collaboration, or consulting work.
 
