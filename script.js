@@ -16,3 +16,17 @@ window.addEventListener("click", function (e) {
   }
 });
 
+
+// FAQ accordion
+document.querySelectorAll(".faq-q").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    btn.parentElement.classList.toggle("open");
+  });
+});
+
+// Close mobile menu after tapping a link
+document.querySelectorAll("#dropdownMenu a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    document.getElementById("dropdownMenu").classList.remove("show");
+  });
+});

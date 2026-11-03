@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Devin Collins – Contact</title>
-  <meta name="description" content="Get in touch with Devin Collins — cybersecurity engineer and founder of GhostGrid Cyber — about cyber insurance readiness, Microsoft 365 security, or ongoing managed security." />
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Book a Call | GhostGrid Cyber</title>
+  <meta name="description" content="Book a free 20-minute call with GhostGrid Cyber about a Cyber Insurance Readiness Assessment before your next application or renewal." />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .next-steps h3 { margin-bottom: 20px; }
+    .next-steps .step { margin-bottom: 14px; }
+    .next-steps .step h3 { margin-bottom: 6px; }
+  </style>
 </head>
 <body>
 
@@ -21,85 +25,91 @@
       GHOSTGRID
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#ghostgrid">Services</a>
-      <a href="contact.html" class="nav-cta active">Get In Touch</a>
+      <a href="index.html#assessment">The Assessment</a>
+      <a href="index.html#process">How It Works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contact.html" class="nav-cta active">Book a Call</a>
     </div>
     <div class="dropdown">
-      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#ghostgrid">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html#assessment">The Assessment</a>
+        <a href="index.html#process">How It Works</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Book a Call</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">Contact</span>
-    <h2>Let's Talk</h2>
-    <p>Have a cyber insurance renewal coming up, or a Microsoft 365 environment that needs a second set of eyes? Send me a note &mdash; I'll get back to you within 24 hours.</p>
+    <span class="hero-tag">Book a Call</span>
+    <h2>Let's Look at Your Application</h2>
+    <p>Tell us when your cyber insurance renews. We'll reply within one business day to set up a free 20-minute call.</p>
   </header>
 
   <main>
     <div class="contact-layout">
 
-      <!-- LEFT: About Devin -->
-      <div class="contact-profile">
-        <img src="IMG_1595.png" alt="Devin Collins – Founder, GhostGrid Cyber" />
-        <h2>Devin Collins</h2>
-        <p class="title">
-          Cybersecurity Engineer &middot; ISC2 CC<br>
-          Founder, GhostGrid Cyber<br>
-          M.S. Cybersecurity — Canisius University<br>
-          Buffalo, NY
-        </p>
-        <ul class="contact-details">
+      <div class="next-steps">
+        <h3>What happens next</h3>
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>We reply within one business day</h3>
+          <p>To schedule a short call that fits your timeline.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Free 20-minute call</h3>
+          <p>Your renewal date, carrier, and current setup. No prep needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Flat-fee quote</h3>
+          <p>A fixed price for the full assessment. No obligation.</p>
+        </div>
+        <ul class="contact-details" style="margin-top:24px;">
           <li>
             <span class="label">Email</span>
             <a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a>
           </li>
           <li>
-            <span class="label">Focus</span>
-            Microsoft 365 &amp; Cloud Security
-          </li>
-          <li>
-            <span class="label">Location</span>
-            Buffalo, NY
-          </li>
-          <li>
-            <span class="label">Response</span>
-            Within 24 hours
+            <span class="label">Service Area</span>
+            Western New York &middot; Remote nationwide
           </li>
         </ul>
       </div>
 
-      <!-- RIGHT: Form -->
       <div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
-          <h3>Send a Message</h3>
-          <p>Tell me what's coming up &mdash; a renewal date, a security question, or a tenant you're not sure is locked down.</p>
+          <p style="display:none;"><label>Leave blank: <input name="bot-field" /></label></p>
+          <h3>Request a Free Call</h3>
 
           <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email address" required />
-          <input type="text" name="business" placeholder="Company name (optional)" />
-          <input type="tel" name="phone" placeholder="Phone number (optional)" />
+          <input type="email" name="email" placeholder="Work email" required />
+          <input type="text" name="business" placeholder="Company name" required />
+          <input type="tel" name="phone" placeholder="Phone (optional)" />
 
-          <select name="interest">
-            <option value="" disabled selected>What are you interested in?</option>
-            <option>Cyber insurance readiness review</option>
-            <option>Microsoft 365 security hardening</option>
-            <option>Ongoing managed security</option>
-            <option>Job opportunity / hiring</option>
-            <option>Not sure yet &mdash; let&rsquo;s talk</option>
+          <select name="employees">
+            <option value="" disabled selected>Number of employees</option>
+            <option>1&ndash;10</option>
+            <option>11&ndash;50</option>
+            <option>51&ndash;250</option>
+            <option>250+</option>
           </select>
 
-          <textarea name="message" placeholder="Tell me a bit about what you're looking for..."></textarea>
+          <select name="renewal">
+            <option value="" disabled selected>When does your policy renew?</option>
+            <option>Within 30 days</option>
+            <option>1&ndash;3 months</option>
+            <option>3&ndash;6 months</option>
+            <option>6+ months</option>
+            <option>No policy yet &mdash; applying for the first time</option>
+          </select>
 
-          <button type="submit">Send Message</button>
+          <textarea name="message" placeholder="Anything we should know? (carrier name, recent denial, premium increase, etc.)"></textarea>
+
+          <button type="submit">Request My Call</button>
         </form>
       </div>
 
@@ -107,15 +117,10 @@
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#ghostgrid">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
     <span class="footer-logo">GHOSTGRID CYBER</span>
-    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
+    <p>Cyber Insurance Readiness &middot; Western New York</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
+    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>

@@ -1,71 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GhostGrid Cyber | Microsoft 365 &amp; Cloud Security for Small Business</title>
-  <meta name="description" content="GhostGrid Cyber helps Western New York small businesses pass cyber insurance requirements and secure their Microsoft 365 environments. Practical security for companies without a security team." />
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>GhostGrid Cyber | Cyber Insurance Readiness Assessment</title>
+  <meta name="description" content="GhostGrid Cyber gets small businesses ready for cyber insurance. We check your application answers against your real environment, find the gaps, and give you a fix plan before you submit." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .services-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .service-block {
+    .offer {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      transition: all 0.25s;
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
     }
-
-    .service-block:hover {
-      border-color: var(--border-light);
-      transform: translateY(-2px);
-    }
-
-    .service-block .block-label {
+    .offer h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .offer .label {
       font-family: var(--mono);
       font-size: 10px;
       color: var(--green);
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 12px;
       display: block;
-    }
-
-    .service-block h3 {
-      color: var(--text);
-      font-size: 1.3rem;
       margin-bottom: 12px;
     }
-
-    .service-block p {
-      font-size: 0.9rem;
-      margin-bottom: 20px;
+    .offer .side {
+      border-left: 1px solid var(--border);
+      padding-left: 32px;
     }
-
-    .service-block .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .offer .side h4 { color: var(--text); font-size: 0.95rem; margin-bottom: 10px; }
+    .offer .side p { font-size: 0.9rem; }
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-top: 24px;
     }
-
-    .service-block .feature-list span {
+    .check-grid span {
       font-size: 0.88rem;
       color: var(--text-secondary);
       padding-left: 20px;
       position: relative;
     }
-
-    .service-block .feature-list span::before {
+    .check-grid span::before {
       content: "";
       position: absolute;
       left: 0;
@@ -74,38 +57,12 @@
       height: 6px;
       border-radius: 2px;
       background: var(--green);
-      opacity: 0.6;
     }
-
-    .service-block .block-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 20px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--green);
-    }
-
-    .service-block .block-link:hover { opacity: 0.8; }
-
-    .cert-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--green);
-      background: var(--green-dim);
-      border: 1px solid rgba(0,232,154,0.2);
-      padding: 6px 14px;
-      border-radius: 20px;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
+    .fine-print { font-size: 0.8rem; color: var(--muted); margin-top: 24px; max-width: 640px; }
     @media (max-width: 768px) {
-      .services-split { grid-template-columns: 1fr; }
+      .offer { grid-template-columns: 1fr; padding: 28px 22px; gap: 28px; }
+      .offer .side { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 24px; }
+      .check-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -119,180 +76,165 @@
       GHOSTGRID
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#ghostgrid">Services</a>
-      <a href="contact.html" class="nav-cta">Get In Touch</a>
+      <a href="#assessment">The Assessment</a>
+      <a href="#process">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
     </div>
     <div class="dropdown">
-      <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+      <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="#ghostgrid">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="#assessment">The Assessment</a>
+        <a href="#process">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="contact.html">Book a Call</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">Microsoft 365 Security &middot; Cyber Insurance &middot; Buffalo, NY</span>
-    <h1>Security Your Insurance Carrier<br><span class="accent">Will Actually Accept.</span></h1>
-    <p>Cyber insurance applications ask questions most small businesses can't answer yes to. GhostGrid Cyber reviews your application before you submit it, fixes the gaps, and keeps your Microsoft 365 environment secure year-round &mdash; so your coverage holds and your premium doesn't spike.</p>
+    <span class="hero-tag">Cyber Insurance Readiness &middot; Western New York</span>
+    <h1>Pass Your Cyber Insurance<br><span class="accent">Application the First Time.</span></h1>
+    <p>Carriers now deny or reprice coverage when your answers don't match reality. We check every answer on your application against your actual systems, show you the gaps, and give you a fix plan before you submit.</p>
     <div class="btn-row">
-      <a href="contact.html" class="btn-primary">Get In Touch</a>
-      <a href="#ghostgrid" class="btn-secondary">See Our Services</a>
+      <a href="contact.html" class="btn-primary">Book a Free 20-Minute Call</a>
+      <a href="#assessment" class="btn-secondary">What's Included</a>
     </div>
-    <p class="hero-sub">ISC2 Certified in Cybersecurity (CC) &middot; M.S. Cybersecurity, Canisius University &middot; Serving Western New York</p>
   </header>
-
-  <div class="stats-bar" style="max-width:1100px; margin: 0 auto;">
-    <div class="stat">
-      <div class="num">CC</div>
-      <div class="label">ISC2 Certified in Cybersecurity</div>
-    </div>
-    <div class="stat">
-      <div class="num">M.S.</div>
-      <div class="label">Cybersecurity, Canisius University</div>
-    </div>
-    <div class="stat">
-      <div class="num">M365</div>
-      <div class="label">Microsoft 365 Security Focus</div>
-    </div>
-    <div class="stat">
-      <div class="num">12yr</div>
-      <div class="label">IT Roots in Western New York</div>
-    </div>
-  </div>
 
   <main>
 
-    <section id="about" style="margin-bottom: 80px;">
-      <span class="section-tag">Who You&rsquo;re Working With</span>
-      <h2>Built on Real Infrastructure Experience</h2>
-      <p style="max-width:640px;">I grew up around a family IT company that has served Western New York for 12 years, so real infrastructure isn't new to me. I work in security monitoring and incident response every day, hold the ISC2 Certified in Cybersecurity credential, and I'm completing an M.S. in Cybersecurity at Canisius University.</p>
-      <p style="max-width:640px;">GhostGrid Cyber exists because small businesses get held to enterprise security requirements without enterprise budgets or staff. You get direct access to me &mdash; not a ticket queue, not an account manager.</p>
-
+    <section style="margin-bottom: 80px;">
+      <span class="section-tag">The Problem</span>
+      <h2>A Wrong Answer Costs More Than a Gap</h2>
       <div class="why-grid">
         <div class="why-card">
-          <span class="card-icon">☁️</span>
-          <h3>Microsoft 365 Security</h3>
-          <p>Multifactor authentication, Conditional Access, admin account protection, and tenant hardening.</p>
+          <span class="card-icon">📈</span>
+          <h3>Premiums Jump</h3>
+          <p>One "no" on MFA, backups, or endpoint protection can raise your quote or add exclusions.</p>
         </div>
         <div class="why-card">
-          <span class="card-icon">🛡️</span>
-          <h3>Endpoint Protection</h3>
-          <p>Daily hands-on monitoring and incident response across multi-client environments using enterprise EDR tooling.</p>
+          <span class="card-icon">⛔</span>
+          <h3>Coverage Gets Denied</h3>
+          <p>Many carriers won't write a policy at all until core controls are in place.</p>
         </div>
         <div class="why-card">
-          <span class="card-icon">🎯</span>
-          <h3>ISC2 Certified (CC)</h3>
-          <p>Passed the ISC2 Certified in Cybersecurity exam — foundational security concepts, network security, and incident response.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">📋</span>
-          <h3>Insurance &amp; Compliance</h3>
-          <p>Working directly from carrier questionnaires and the control frameworks behind them &mdash; CIS Controls and NIST CSF.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">🎓</span>
-          <h3>M.S. Cybersecurity</h3>
-          <p>Canisius University &mdash; academic grounding paired with real client work, not just coursework.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">🛠️</span>
-          <h3>12 Years of IT Roots</h3>
-          <p>Backed by real infrastructure experience in Western New York, not just certifications.</p>
+          <span class="card-icon">⚠️</span>
+          <h3>Claims Get Disputed</h3>
+          <p>If you answered "yes" and it wasn't true, the carrier can push back when you file a claim.</p>
         </div>
       </div>
     </section>
 
-    <section id="ghostgrid" style="margin-bottom: 80px;">
-      <span class="section-tag">Services</span>
-      <h2>What GhostGrid Does</h2>
-      <p style="max-width:640px;">GhostGrid Cyber helps small businesses pass their cyber insurance requirements and keep their environments secure afterward. Practical security work for companies that don't have a security team.</p>
+    <section id="assessment" style="margin-bottom: 80px;">
+      <span class="section-tag">Our Service</span>
+      <h2>Cyber Insurance Readiness Assessment</h2>
+      <p style="max-width:640px;">One focused engagement. We use your carrier's actual questionnaire, verify each answer in your environment, and hand you a clear report you can act on.</p>
 
-      <div class="services-split">
-        <div class="service-block">
-          <span class="block-label">Assessment</span>
-          <h3>Cyber Insurance Readiness</h3>
-          <p>Your cyber insurance application asks hard questions. Answer them wrong and your premium jumps — or coverage gets denied. I review the application with you before you submit it, and we fix what we can before the deadline.</p>
-          <div class="feature-list">
-            <span>Full review against your carrier&rsquo;s questionnaire</span>
-            <span>Gap report showing which answers cost you</span>
-            <span>Prioritized fix list with time and cost estimates</span>
-            <span>Written findings you can hand to your carrier</span>
-            <span>Flat fee &mdash; no surprises</span>
+      <div class="offer">
+        <div>
+          <span class="label">What We Check</span>
+          <h3>The controls carriers ask about most</h3>
+          <div class="check-grid">
+            <span>MFA on email, remote access &amp; admin accounts</span>
+            <span>Backups &mdash; offline, encrypted, tested</span>
+            <span>Endpoint detection &amp; response (EDR)</span>
+            <span>Patching &amp; end-of-life systems</span>
+            <span>Privileged &amp; admin account control</span>
+            <span>Email security (SPF, DKIM, DMARC)</span>
+            <span>Phishing &amp; security awareness training</span>
+            <span>Incident response plan</span>
+            <span>Ransomware supplement questions</span>
+            <span>Vendor &amp; remote access</span>
           </div>
-          <a href="contact.html" class="block-link">Get a readiness review &rarr;</a>
         </div>
-
-        <div class="service-block">
-          <span class="block-label">Ongoing</span>
-          <h3>Managed Security &amp; Remediation</h3>
-          <p>Fixing the gaps is step one. Keeping the answers &ldquo;yes&rdquo; at next year&rsquo;s renewal is the job. Month-to-month support so your coverage and your controls stay in place.</p>
-          <div class="feature-list">
-            <span>Remediation of the gaps we found</span>
-            <span>Endpoint protection &amp; monitoring</span>
-            <span>Microsoft 365 and cloud security hardening</span>
-            <span>Annual renewal prep built in</span>
-            <span>Direct access to me, not a ticket queue</span>
+        <div class="side">
+          <h4>What you get</h4>
+          <div class="check-grid" style="grid-template-columns:1fr; margin-top:0;">
+            <span>Answer-by-answer review of your application</span>
+            <span>Gap report ranked by impact on your coverage</span>
+            <span>Prioritized fix plan with time &amp; cost estimates</span>
+            <span>Evidence summary to share with your broker</span>
+            <span>Follow-up re-check after fixes are made</span>
           </div>
-          <a href="contact.html" class="block-link">Ask about ongoing support &rarr;</a>
+          <p style="margin-top:24px;"><strong style="color:var(--text);">Flat fee.</strong> Quoted after a free call, based on company size. No hourly billing.</p>
+          <a href="contact.html" class="btn-primary" style="margin-top:4px;">Get a Quote</a>
         </div>
       </div>
+      <p class="fine-print">GhostGrid Cyber is not an insurance broker or carrier and does not sell insurance. Final coverage and pricing decisions are made by your carrier.</p>
     </section>
 
-    <section style="margin-bottom: 80px;">
+    <section id="process" style="margin-bottom: 80px;">
       <span class="section-tag">How It Works</span>
-      <h2>From First Call to Covered</h2>
-      <p style="max-width:640px;">Four steps, usually inside of three weeks.</p>
+      <h2>From Application to Ready</h2>
+      <p style="max-width:640px;">Usually two to three weeks.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <h3>Send Me the Application</h3>
-          <p>You forward your cyber insurance questionnaire. I review it against what your environment actually looks like today.</p>
+          <h3>Free Call</h3>
+          <p>20 minutes on your renewal date, your environment, and your carrier. You get a flat-fee quote.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>Get the Gap Report</h3>
-          <p>A short written report: which answers are currently "no," what that costs you, and what it takes to fix each one.</p>
+          <h3>Assessment</h3>
+          <p>Send us your application. We verify each answer against your real systems.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h3>Fix What Matters</h3>
-          <p>We close the gaps that move the needle before your renewal date &mdash; MFA, backups, admin access, endpoint protection.</p>
+          <h3>Report &amp; Fix Plan</h3>
+          <p>You get the gap report and a ranked list of what to fix first. Your IT team or ours can do the work.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <h3>Stay Covered</h3>
-          <p>Optional monthly support keeps your controls in place so next year&rsquo;s renewal is a formality, not a fire drill.</p>
+          <h3>Re-Check &amp; Submit</h3>
+          <p>We confirm the fixes and you submit an application you can stand behind.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="margin-bottom: 80px;">
+      <span class="section-tag">FAQ</span>
+      <h2>Common Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Who is this for? <span class="arrow">▼</span></button>
+          <div class="faq-a">Small and mid-sized businesses with a cyber insurance application or renewal coming up &mdash; especially if you were denied, had your premium raised, or aren't sure your answers are accurate.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">When should we start? <span class="arrow">▼</span></button>
+          <div class="faq-a">60 to 90 days before your renewal is ideal. That leaves time to fix gaps before you submit. Shorter timelines are possible.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">We already have an IT provider. Do we still need this? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes &mdash; this is an independent check. We work alongside your IT provider and give them a clear list of what the carrier needs to see.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you fix the gaps too? <span class="arrow">▼</span></button>
+          <div class="faq-a">The assessment is the core service. If you want help with the fixes, we can quote that separately after the report.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is our information kept confidential? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes. We sign an NDA on request, use read-only access wherever possible, and never share your findings without your permission.</div>
         </div>
       </div>
     </section>
 
     <div class="cta-block">
-      <span class="section-tag">Let's Connect</span>
+      <span class="section-tag">Next Step</span>
       <h2>Renewal Coming Up?</h2>
-      <p>If your cyber insurance renews in the next few months, that's the right time to talk. Send me the application and I'll tell you where you stand &mdash; no charge for the first conversation.</p>
+      <p>Book a free 20-minute call. We'll tell you where you likely stand and what a full assessment would cost.</p>
       <div class="btn-row">
-        <a href="contact.html" class="btn-primary">Get In Touch</a>
-        <a href="#ghostgrid" class="btn-secondary">See Our Services</a>
+        <a href="contact.html" class="btn-primary">Book a Free Call</a>
       </div>
     </div>
 
   </main>
 
   <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="#about">About</a>
-      <a href="#ghostgrid">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
     <span class="footer-logo">GHOSTGRID CYBER</span>
-    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
+    <p>Cyber Insurance Readiness &middot; Western New York</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
+    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>

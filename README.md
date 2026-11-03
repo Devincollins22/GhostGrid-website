@@ -1,22 +1,8 @@
-# GhostGrid – Personal Site
+# GhostGrid Cyber – Website
 
-Personal site for **Devin Collins** — cybersecurity engineer building hands-on skills in Azure security and DevSecOps, ISC2 Certified in Cybersecurity (CC), and founder of **GhostGrid Cyber**, an Azure security consultancy for small businesses.
+Marketing site for GhostGrid Cyber's **Cyber Insurance Readiness Assessment**.
 
-Two pages: a homepage covering background, focus areas, and the GhostGrid venture, and a contact page for reaching out about roles, collaboration, or consulting work.
+- `index.html` – service page (problem, what's included, process, FAQ)
+- `contact.html` – free-call request form (Netlify Forms)
 
-## 🌐 Website
-
-Visit the live site: [https://ghostgridcyber.netlify.app](https://ghostgridcyber.netlify.app)
-
-## 🚀 Deployment
-
-This static website is deployed via **Netlify** and auto-updated from the GitHub repository.
-
-## 📫 Contact
-
-Reach out at: [dmc@ghostgridcyber.com](mailto:dmc@ghostgridcyber.com)
-
----
-
-> Built and secured by Devin Collins, Canisius University student-athlete & cybersecurity specialist.
-
+Static HTML/CSS/JS, auto-deployed to Netlify from GitHub.
