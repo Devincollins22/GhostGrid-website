@@ -6,63 +6,104 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <title>GhostGrid Cyber | Cyber Insurance Readiness Assessment</title>
-  <meta name="description" content="GhostGrid Cyber gets small businesses ready for cyber insurance. We check your application answers against your real environment, find the gaps, and give you a fix plan before you submit." />
+  <title>GhostGrid Cyber | AI-Powered Security for Small Businesses</title>
+  <meta name="description" content="GhostGrid Cyber uses Claude Mythos 5.2, an AI security model restricted to vetted security professionals, to find what other reviews miss. Cyber insurance readiness, cloud and network security assessments, and ongoing security programs for Western New York businesses." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .offer {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px 36px;
-      margin-top: 32px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
+    section { margin-bottom: 96px; scroll-margin-top: 80px; }
+    .lead { max-width: 660px; font-size: 1.05rem; }
+    .center { text-align: center; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+
+    /* Hero extras */
+    .hero h1 { max-width: 900px; margin-left: auto; margin-right: auto; }
+    .hero-proof {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px;
+      margin-top: 36px; font-size: 0.85rem; color: var(--muted);
     }
-    .offer h3 { font-size: 1.4rem; margin-bottom: 12px; }
-    .offer .label {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--green);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 12px;
+    .hero-proof span::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+    /* Mythos panel */
+    .mythos {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;
+      background: linear-gradient(135deg, var(--bg2) 0%, var(--card) 100%);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 48px 44px; position: relative; overflow: hidden;
     }
-    .offer .side {
-      border-left: 1px solid var(--border);
-      padding-left: 32px;
+    .mythos::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
     }
-    .offer .side h4 { color: var(--text); font-size: 0.95rem; margin-bottom: 10px; }
-    .offer .side p { font-size: 0.9rem; }
-    .check-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 24px;
-      margin-top: 24px;
+    .mythos h2 { margin-bottom: 14px; }
+    .mythos-points { display: grid; gap: 14px; }
+    .mythos-point {
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 20px;
     }
-    .check-grid span {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      padding-left: 20px;
-      position: relative;
+    .mythos-point strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 0.98rem; }
+    .mythos-point p { margin: 0; font-size: 0.88rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono);
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green);
+      border: 1px solid rgba(0,232,154,0.25); background: var(--green-dim);
+      padding: 6px 12px; border-radius: 20px; margin-bottom: 18px;
     }
-    .check-grid span::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 6px;
-      height: 6px;
-      border-radius: 2px;
-      background: var(--green);
+    .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+
+    /* Comparison */
+    .compare {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 36px;
     }
-    .fine-print { font-size: 0.8rem; color: var(--muted); margin-top: 24px; max-width: 640px; }
-    @media (max-width: 768px) {
-      .offer { grid-template-columns: 1fr; padding: 28px 22px; gap: 28px; }
-      .offer .side { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 24px; }
-      .check-grid { grid-template-columns: 1fr; }
+    .compare > div { background: var(--card); padding: 28px; }
+    .compare h3 { font-size: 1rem; margin-bottom: 14px; }
+    .compare .them h3 { color: var(--muted); }
+    .compare .us h3 { color: var(--green); }
+    .compare li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; }
+    .compare .them li::before { content: "–"; position: absolute; left: 4px; color: var(--muted); }
+    .compare .us li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+    /* Services */
+    .service-card .price-from { font-family: var(--mono); font-size: 12px; color: var(--green); letter-spacing: 1px; margin-bottom: 12px; display: block; }
+    .service-card p { font-size: 0.92rem; }
+    .service-card ul li::before { content: "→"; position: absolute; left: 0; color: var(--green); }
+    .service-card ul li { position: relative; }
+
+    /* Pricing tweaks */
+    .plan ul li { position: relative; }
+    .plan ul li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    .plan .was { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 2px; }
+    .addon {
+      margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;
+      background: var(--card); border: 1px dashed var(--border-light); border-radius: var(--radius); padding: 22px 26px;
+    }
+    .addon strong { color: var(--text); }
+    .addon p { margin: 4px 0 0; font-size: 0.9rem; }
+    .addon .addon-price { font-family: var(--mono); color: var(--text); font-size: 1.2rem; font-weight: 600; white-space: nowrap; }
+    .addon .addon-price span { color: var(--muted); font-size: 0.8rem; font-weight: 400; }
+
+    /* Industries */
+    .industries { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .industries span {
+      border: 1px solid var(--border); background: var(--card); border-radius: 20px;
+      padding: 8px 16px; font-size: 0.88rem; color: var(--text-secondary);
+    }
+
+    .fine-print { font-size: 0.78rem; color: var(--muted); margin-top: 20px; max-width: 760px; }
+    .center .fine-print { margin-left: auto; margin-right: auto; }
+
+
+    /* Reset inherited bullet squares */
+    .service-card ul li::before, .plan ul li::before, .compare li::before {
+      background: none !important; width: auto !important; height: auto !important;
+      border-radius: 0 !important; top: 9px !important; box-shadow: none !important; line-height: 1;
+    }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 760px) { .services-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 860px) {
+      .mythos { grid-template-columns: 1fr; padding: 32px 22px; gap: 28px; }
+      .compare { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -76,8 +117,9 @@
       GHOSTGRID
     </a>
     <div class="nav-links">
-      <a href="#assessment">The Assessment</a>
-      <a href="#ai-reviews">AI Reviews</a>
+      <a href="#mythos">Our AI</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#process">How It Works</a>
       <a href="#faq">FAQ</a>
       <a href="contact.html" class="nav-cta">Book a Call</a>
@@ -85,8 +127,9 @@
     <div class="dropdown">
       <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu">☰</button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="#assessment">The Assessment</a>
-        <a href="#ai-reviews">AI Reviews</a>
+        <a href="#mythos">Our AI</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#process">How It Works</a>
         <a href="#faq">FAQ</a>
         <a href="contact.html">Book a Call</a>
@@ -95,195 +138,305 @@
   </nav>
 
   <header class="hero">
-    <span class="hero-tag">Cyber Insurance Readiness &middot; Western New York</span>
-    <h1>Pass Your Cyber Insurance<br><span class="accent">Application the First Time.</span></h1>
-    <p>Carriers now deny or reprice coverage when your answers don't match reality. We check every answer on your application against your actual systems, show you the gaps, and give you a fix plan before you submit.</p>
+    <span class="hero-tag">AI-Powered Security &middot; Western New York</span>
+    <h1>Enterprise-Grade Security.<br><span class="accent">Small-Business Price.</span></h1>
+    <p>GhostGrid uses Claude Mythos 5.2, an AI security model that only verified security professionals can access, to find the gaps attackers and insurers look for. A real analyst checks every finding, and you get a clear plan to fix them.</p>
     <div class="btn-row">
       <a href="contact.html" class="btn-primary">Book a Free 20-Minute Call</a>
-      <a href="#assessment" class="btn-secondary">What's Included</a>
+      <a href="#pricing" class="btn-secondary">See Pricing</a>
+    </div>
+    <div class="hero-proof">
+      <span>Flat, published prices</span>
+      <span>Read-only access</span>
+      <span>Human-verified findings</span>
+      <span>Built for HIPAA &amp; insurance requirements</span>
     </div>
   </header>
 
   <main>
 
-    <section style="margin-bottom: 80px;">
+    <!-- PROBLEM -->
+    <section>
       <span class="section-tag">The Problem</span>
-      <h2>A Wrong Answer Costs More Than a Gap</h2>
+      <h2>Small Businesses Are the Main Target Now</h2>
+      <p class="lead">Attackers go after small businesses because they usually have less protection. Insurers know it too, and they now check your security before they cover you.</p>
       <div class="why-grid">
+        <div class="why-card">
+          <span class="card-icon">🎯</span>
+          <h3>Ransomware Hits Small Firms Hardest</h3>
+          <p>Ransomware showed up in 88% of small-business breaches in Verizon's 2025 report, more than double the rate at large companies.*</p>
+        </div>
         <div class="why-card">
           <span class="card-icon">📈</span>
-          <h3>Premiums Jump</h3>
-          <p>One "no" on MFA, backups, or endpoint protection can raise your quote or add exclusions.</p>
+          <h3>Insurance Is Harder to Get</h3>
+          <p>One wrong answer on MFA, backups or endpoint protection can raise your premium, add exclusions, or get you denied.</p>
         </div>
         <div class="why-card">
-          <span class="card-icon">⛔</span>
-          <h3>Coverage Gets Denied</h3>
-          <p>Many carriers won't write a policy at all until core controls are in place.</p>
-        </div>
-        <div class="why-card">
-          <span class="card-icon">⚠️</span>
-          <h3>Claims Get Disputed</h3>
-          <p>If you answered "yes" and it wasn't true, the carrier can push back when you file a claim.</p>
+          <span class="card-icon">💸</span>
+          <h3>Big-Firm Security Costs Too Much</h3>
+          <p>Full security assessments and part-time security leaders often run thousands to tens of thousands of dollars. Most small businesses go without.</p>
         </div>
       </div>
     </section>
 
-    <section id="assessment" style="margin-bottom: 80px;">
-      <span class="section-tag">Our Service</span>
-      <h2>Cyber Insurance Readiness Assessment</h2>
-      <p style="max-width:640px;">One focused engagement. We use your carrier's actual questionnaire, verify each answer in your environment, and hand you a clear report you can act on.</p>
-
-      <div class="offer">
+    <!-- MYTHOS -->
+    <section id="mythos">
+      <div class="mythos">
         <div>
-          <span class="label">What We Check</span>
-          <h3>The controls carriers ask about most</h3>
-          <div class="check-grid">
-            <span>MFA on email, remote access &amp; admin accounts</span>
-            <span>Backups &mdash; offline, encrypted, tested</span>
-            <span>Endpoint detection &amp; response (EDR)</span>
-            <span>Patching &amp; end-of-life systems</span>
-            <span>Privileged &amp; admin account control</span>
-            <span>Email security (SPF, DKIM, DMARC)</span>
-            <span>Phishing &amp; security awareness training</span>
-            <span>Incident response plan</span>
-            <span>Ransomware supplement questions</span>
-            <span>Vendor &amp; remote access</span>
-          </div>
+          <span class="badge"><span class="dot"></span>Verified Access</span>
+          <h2>The AI Most Security Firms Can't Use</h2>
+          <p>Claude Mythos 5.2 is Anthropic's most capable AI model for cybersecurity. Because it is so powerful, Anthropic only gives access to security professionals who pass its Cyber Verification Program. GhostGrid is approved.</p>
+          <p style="margin-bottom:0;">That means your business gets the same kind of AI analysis that large security teams use, reviewed by a person, at a price that makes sense for a small company.</p>
         </div>
-        <div class="side">
-          <h4>What you get</h4>
-          <div class="check-grid" style="grid-template-columns:1fr; margin-top:0;">
-            <span>Answer-by-answer review of your application</span>
-            <span>Gap report ranked by impact on your coverage</span>
-            <span>Prioritized fix plan with time &amp; cost estimates</span>
-            <span>Evidence summary to share with your broker</span>
-            <span>Follow-up re-check after fixes are made</span>
+        <div class="mythos-points">
+          <div class="mythos-point">
+            <strong>Finds what other tools miss</strong>
+            <p>Anthropic reports that one security firm found one in six confirmed bugs Mythos caught had been missed by every other leading AI model it tested.*</p>
           </div>
-          <p style="margin-top:24px;"><strong style="color:var(--text);">Flat fee.</strong> Quoted after a free call, based on company size. No hourly billing.</p>
-          <a href="contact.html" class="btn-primary" style="margin-top:4px;">Get a Quote</a>
+          <div class="mythos-point">
+            <strong>Sees how problems connect</strong>
+            <p>A scanner checks one setting at a time. Mythos looks at how settings combine, like a public file share plus an admin account without MFA.</p>
+          </div>
+          <div class="mythos-point">
+            <strong>Writes the fix, not just the problem</strong>
+            <p>Every finding comes with the exact steps or code to fix it, so your IT team can act right away.</p>
+          </div>
         </div>
       </div>
-      <p class="fine-print">GhostGrid Cyber is not an insurance broker or carrier and does not sell insurance. Final coverage and pricing decisions are made by your carrier.</p>
+
+      <div class="compare">
+        <div class="them">
+          <h3>Typical security check</h3>
+          <ul>
+            <li>Long scanner report full of false alarms</li>
+            <li>Hourly billing with no clear total</li>
+            <li>Technical jargon you have to translate</li>
+            <li>One-time look, then nothing</li>
+          </ul>
+        </div>
+        <div class="us">
+          <h3>GhostGrid</h3>
+          <ul>
+            <li>Ranked findings, each checked by an analyst</li>
+            <li>Flat prices published on this page</li>
+            <li>Plain-English report and fix plan</li>
+            <li>Monthly re-checks that show your progress</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="ai-reviews" style="margin-bottom: 80px;">
-      <span class="section-tag">New &middot; Now Accepting Pilot Clients</span>
-      <h2>AI-Powered Security Reviews</h2>
-      <p style="max-width:640px;">GhostGrid has verified access to advanced AI security models that are only available to approved security professionals. We use them to find weaknesses faster and more thoroughly, and a GhostGrid analyst checks every finding before you see it.</p>
+    <!-- SERVICES -->
+    <section id="services">
+      <span class="section-tag">Services</span>
+      <h2>What We Do</h2>
+      <p class="lead">Start with one assessment, or let us run security for you every month.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><span class="card-icon">📋</span>Cyber Insurance Readiness</h3>
+          <span class="price-from">FROM $1,500 &middot; ONE-TIME</span>
+          <p>We check every answer on your insurance application against your real systems before you submit.</p>
+          <ul>
+            <li>MFA, backups, EDR, patching, email security</li>
+            <li>Gap report ranked by impact on coverage</li>
+            <li>Evidence summary for your broker</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3><span class="card-icon">🛡️</span>AI Security Assessment</h3>
+          <span class="price-from">FROM $3,500 &middot; ONE-TIME</span>
+          <p>A full Mythos-powered review of your Microsoft 365, Azure and office network.</p>
+          <ul>
+            <li>Firewall, Active Directory &amp; cloud settings</li>
+            <li>Scored against CIS Controls (and HIPAA if needed)</li>
+            <li>Prioritized fix plan with exact steps</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3><span class="card-icon">📈</span>Managed Security Program</h3>
+          <span class="price-from">FROM $1,250 / MONTH</span>
+          <p>Your outsourced security team. We keep checking, keep reporting, and keep you insurable.</p>
+          <ul>
+            <li>Monthly AI re-check and progress score</li>
+            <li>Plain-English monthly report</li>
+            <li>Insurance renewal support every year</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3><span class="card-icon">☁️</span>Secure Code Gate</h3>
+          <span class="price-from">$500 / MONTH PER REPO</span>
+          <p>For teams that build in the cloud. Mythos checks every infrastructure change before it goes live.</p>
+          <ul>
+            <li>Reviews every Terraform change automatically</li>
+            <li>Blocks unsafe changes, suggests the fix</li>
+            <li>Mapped to CIS &amp; HIPAA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <div class="why-grid">
-        <div class="why-card">
-          <span class="card-icon">☁️</span>
-          <h3>Cloud Code Review</h3>
-          <p>Every change to your Azure infrastructure code is checked before it goes live. Unsafe changes are stopped, and each problem comes with the fix.</p>
+    <!-- PRICING -->
+    <section id="pricing" class="center">
+      <span class="section-tag">Founding-Client Pricing</span>
+      <h2>Simple, Flat Prices</h2>
+      <p class="lead">No hourly billing and no surprises. These founding rates are open to our first 10 Western New York clients.</p>
+
+      <div class="pricing-grid" style="text-align:left;">
+        <div class="plan">
+          <h3>Insurance Readiness</h3>
+          <div class="price">$1,500</div>
+          <p class="tagline">one-time &middot; up to 25 employees<br>$2,500 for 26&ndash;100 employees</p>
+          <ul>
+            <li>Answer-by-answer application review</li>
+            <li>Gap report ranked by coverage impact</li>
+            <li>Fix plan with time &amp; cost estimates</li>
+            <li>Evidence summary for your broker</li>
+            <li>Re-check after fixes</li>
+          </ul>
+          <a href="contact.html" class="plan-btn">Get Ready for Renewal</a>
         </div>
-        <div class="why-card">
-          <span class="card-icon">🛡️</span>
-          <h3>Azure Security Review</h3>
-          <p>A read-only review of your Azure setup. We find exposed data, weak access and risky settings, ranked by what to fix first.</p>
+
+        <div class="plan featured">
+          <span class="plan-badge">Best Value</span>
+          <h3>Managed Security Program</h3>
+          <div class="price">$1,250<span>/mo</span></div>
+          <p class="tagline">up to 25 employees &middot; $2,250/mo for 26&ndash;100<br>12-month plan</p>
+          <ul>
+            <li><strong style="color:var(--text);">Free Insurance Readiness Assessment</strong></li>
+            <li>Full AI Security Assessment to start</li>
+            <li>Monthly AI re-check &amp; security score</li>
+            <li>Monthly plain-English report</li>
+            <li>Quarterly review call</li>
+            <li>Insurance renewal support</li>
+            <li>Priority email support</li>
+          </ul>
+          <a href="contact.html" class="plan-btn">Start Your Program</a>
         </div>
-        <div class="why-card">
-          <span class="card-icon">🏢</span>
-          <h3>On-Site Network Review</h3>
-          <p>A review of your servers, firewalls and computers from read-only exports and scans. You get a plain-English report and a fix plan.</p>
+
+        <div class="plan">
+          <h3>AI Security Assessment</h3>
+          <div class="price">$3,500</div>
+          <p class="tagline">one-time &middot; up to 25 employees<br>$5,500 for 26&ndash;100 employees</p>
+          <ul>
+            <li>Microsoft 365 &amp; Azure review</li>
+            <li>Firewall &amp; Active Directory review</li>
+            <li>Mythos analysis + analyst review</li>
+            <li>CIS Controls score (HIPAA if needed)</li>
+            <li>Prioritized fix plan</li>
+            <li>Walkthrough call with your team</li>
+          </ul>
+          <a href="contact.html" class="plan-btn">Book an Assessment</a>
         </div>
       </div>
 
-      <div class="offer">
+      <div class="addon" style="text-align:left;">
         <div>
-          <span class="label">Every Review Includes</span>
-          <h3>Findings you can act on</h3>
-          <div class="check-grid">
-            <span>Problems ranked by real risk</span>
-            <span>Fixes your IT team can apply</span>
-            <span>Mapped to CIS &amp; HIPAA controls</span>
-            <span>Evidence for insurers &amp; auditors</span>
-            <span>Human review of every finding</span>
-            <span>Monthly report option</span>
-          </div>
+          <strong>Secure Code Gate</strong>
+          <p>Automatic Mythos review of every Terraform change, for teams that deploy to Azure.</p>
         </div>
-        <div class="side">
-          <h4>Pilot program</h4>
-          <p>We're taking a small number of pilot clients in Western New York at a reduced rate in exchange for feedback.</p>
-          <a href="contact.html" class="btn-primary" style="margin-top:4px;">Apply for the Pilot</a>
-        </div>
+        <div class="addon-price">$500<span> /mo per repo</span></div>
       </div>
-      <p class="fine-print">We only review systems you own and authorize in writing. Your data is handled under a signed agreement and never shared without your permission.</p>
+
+      <p class="fine-print">Over 100 employees? We'll quote you after a free call. Fixing the gaps is quoted separately, or your current IT provider can do it with our plan.</p>
     </section>
 
-    <section id="process" style="margin-bottom: 80px;">
+    <!-- PROCESS -->
+    <section id="process">
       <span class="section-tag">How It Works</span>
-      <h2>From Application to Ready</h2>
-      <p style="max-width:640px;">Usually two to three weeks.</p>
+      <h2>From First Call to Fixed</h2>
+      <p class="lead">Most assessments take two to three weeks.</p>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
           <h3>Free Call</h3>
-          <p>20 minutes on your renewal date, your environment, and your carrier. You get a flat-fee quote.</p>
+          <p>20 minutes about your business, your systems and your insurance renewal. You get a flat quote.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>Assessment</h3>
-          <p>Send us your application. We verify each answer against your real systems.</p>
+          <h3>Safe Data Collection</h3>
+          <p>With your written permission, we collect read-only settings and reports. We never change your systems.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h3>Report &amp; Fix Plan</h3>
-          <p>You get the gap report and a ranked list of what to fix first. Your IT team or ours can do the work.</p>
+          <h3>AI + Analyst Review</h3>
+          <p>Mythos analyzes everything. A GhostGrid analyst checks each finding before it reaches you.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <h3>Re-Check &amp; Submit</h3>
-          <p>We confirm the fixes and you submit an application you can stand behind.</p>
+          <h3>Report, Fix &amp; Re-Check</h3>
+          <p>You get a ranked fix plan. After the fixes, we re-check and show your improved score.</p>
         </div>
       </div>
     </section>
 
-    <section id="faq" style="margin-bottom: 80px;">
+    <!-- WHO -->
+    <section>
+      <span class="section-tag">Who We Help</span>
+      <h2>Built for Businesses Without a Security Team</h2>
+      <p class="lead">If you have 5 to 100 employees, handle customer or patient data, and need to stay insurable, we're built for you.</p>
+      <div class="industries">
+        <span>Dental &amp; medical offices</span>
+        <span>Accounting &amp; law firms</span>
+        <span>Contractors &amp; trades</span>
+        <span>Manufacturers</span>
+        <span>Nonprofits</span>
+        <span>Software &amp; cloud teams</span>
+        <span>IT providers (MSPs)</span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
       <span class="section-tag">FAQ</span>
       <h2>Common Questions</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q">Who is this for? <span class="arrow">▼</span></button>
-          <div class="faq-a">Small and mid-sized businesses with a cyber insurance application or renewal coming up &mdash; especially if you were denied, had your premium raised, or aren't sure your answers are accurate.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">When should we start? <span class="arrow">▼</span></button>
-          <div class="faq-a">60 to 90 days before your renewal is ideal. That leaves time to fix gaps before you submit. Shorter timelines are possible.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">We already have an IT provider. Do we still need this? <span class="arrow">▼</span></button>
-          <div class="faq-a">Yes &mdash; this is an independent check. We work alongside your IT provider and give them a clear list of what the carrier needs to see.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Do you fix the gaps too? <span class="arrow">▼</span></button>
-          <div class="faq-a">The assessment is the core service. If you want help with the fixes, we can quote that separately after the report.</div>
+          <button class="faq-q">What is Claude Mythos? <span class="arrow">▼</span></button>
+          <div class="faq-a">It's Anthropic's most advanced AI model for cybersecurity. Access is limited to security professionals who pass Anthropic's verification program, and GhostGrid is approved. We use it only for defense: finding and fixing weaknesses in systems you own.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Does AI replace a security analyst? <span class="arrow">▼</span></button>
           <div class="faq-a">No. AI helps us check more, faster. A GhostGrid analyst reviews every finding before it reaches you, and you always have a person to call.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Is our information kept confidential? <span class="arrow">▼</span></button>
-          <div class="faq-a">Yes. We sign an NDA on request, use read-only access wherever possible, and never share your findings without your permission.</div>
+          <button class="faq-q">Is our data safe? <span class="arrow">▼</span></button>
+          <div class="faq-a">We use read-only access, remove passwords and secrets before any analysis, and only work under a signed agreement that explains how your data is handled, including what is sent for AI analysis. For healthcare clients, we put the required HIPAA agreements in place before handling patient data.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will you hack or test-attack our systems? <span class="arrow">▼</span></button>
+          <div class="faq-a">No. Our work is defensive. We review settings, reports and scan results to find weaknesses. Nothing is attacked and nothing is changed.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">We already have an IT provider. Do we still need this? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes. This is an independent check. We work alongside your IT provider and give them a clear list of what to fix.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you fix the problems too? <span class="arrow">▼</span></button>
+          <div class="faq-a">We can. Fixes are quoted separately after the report, or your IT provider can follow our plan.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you sell insurance? <span class="arrow">▼</span></button>
+          <div class="faq-a">No. GhostGrid is not an insurance broker or carrier. We help you get ready. Your carrier makes the final coverage and pricing decisions.</div>
         </div>
       </div>
     </section>
 
     <div class="cta-block">
       <span class="section-tag">Next Step</span>
-      <h2>Renewal Coming Up?</h2>
-      <p>Book a free 20-minute call. We'll tell you where you likely stand and what a full assessment would cost.</p>
+      <h2>Find Out Where You Stand</h2>
+      <p>Book a free 20-minute call. We'll tell you your biggest risks and exactly what a review would cost.</p>
       <div class="btn-row">
         <a href="contact.html" class="btn-primary">Book a Free Call</a>
       </div>
     </div>
 
+    <p class="fine-print">* Ransomware figure: Verizon 2025 Data Breach Investigations Report, as cited by the Center for Internet Security. Mythos detection figure: reported by Anthropic in its Claude Mythos 5.2 announcement. Claude and Mythos are trademarks of Anthropic, PBC. GhostGrid Cyber is not affiliated with or endorsed by Anthropic.</p>
+
   </main>
 
   <footer>
     <span class="footer-logo">GHOSTGRID CYBER</span>
-    <p>Cyber Insurance Readiness &middot; AI-Powered Security Reviews &middot; Western New York</p>
+    <p>AI-Powered Security &middot; Cyber Insurance Readiness &middot; Western New York</p>
     <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
     <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
   </footer>
