@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>DRAFT | Services | GhostGrid Cyber</title>
+  <meta name="description" content="Draft service page — not yet published." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .draft-banner {
+      background: #3b1f1f;
+      border-bottom: 1px solid #5a2e2e;
+      color: #f5a3a3;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 10px 16px;
+      text-transform: uppercase;
+    }
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-top: 24px;
+    }
+    .check-grid span {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+    }
+    .check-grid span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--green);
+    }
+    .offer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+    }
+    .offer .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .offer .side { border-left: 1px solid var(--border); padding-left: 32px; }
+    .offer .side h4 { color: var(--text); font-size: 0.95rem; margin-bottom: 10px; }
+    .offer .side p { font-size: 0.9rem; }
+    .roadmap-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .roadmap-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+    }
+    .roadmap-item.active { border-color: var(--green); }
+    .roadmap-item h4 { color: var(--text); font-size: 1rem; margin: 0; }
+    .roadmap-item p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+    .roadmap-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .roadmap-tag.now { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,232,154,0.2); }
+    .roadmap-tag.next { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(59,130,246,0.2); }
+    .roadmap-tag.later { background: var(--bg3); color: var(--muted); border: 1px solid var(--border); }
+    .fine-print { font-size: 0.8rem; color: var(--muted); margin-top: 24px; max-width: 640px; }
+    @media (max-width: 768px) {
+      .offer { grid-template-columns: 1fr; padding: 28px 22px; gap: 28px; }
+      .offer .side { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 24px; }
+      .check-grid { grid-template-columns: 1fr; }
+      .roadmap-item { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="draft-banner">Draft — not linked from the live site. For internal review only.</div>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#00e89a">
+        <path d="M12 2C8.13 2 5 5.13 5 9v11a1 1 0 0 0 1.54.84L9 19l2 2 2-2 2.46 1.84A1 1 0 0 0 19 20V9c0-3.87-3.13-7-7-7zm0 2a5 5 0 0 1 5 5v9.17l-1.46-1.1a1 1 0 0 0-1.23 0L12 18.17l-2.31-1.74a1 1 0 0 0-1.23 0L7 18.17V9a5 5 0 0 1 5-5zm-2 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg>
+      GHOSTGRID
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mailto:dmc@ghostgridcyber.com" class="nav-cta">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="hero-tag">Service &middot; Microsoft 365</span>
+    <h1>Microsoft 365<br><span class="accent">Security Assessment.</span></h1>
+    <p>A focused review of your M365 tenant &mdash; identity, email, data, and device controls &mdash; checked against real security baselines, not just a checkbox audit. You get a plain-language report and a ranked fix list.</p>
+    <div class="btn-row">
+      <a href="mailto:dmc@ghostgridcyber.com" class="btn-primary">Ask About an Assessment</a>
+      <a href="#whats-checked" class="btn-secondary">What's Included</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="whats-checked" style="margin-bottom: 80px;">
+      <span class="section-tag">The Assessment</span>
+      <h2>What Gets Reviewed</h2>
+      <p style="max-width:640px;">A full pass over the controls that actually stop the attacks hitting small and mid-sized businesses on Microsoft 365 &mdash; business email compromise, credential theft, and data leakage.</p>
+
+      <div class="offer">
+        <div>
+          <span class="label">Core Checks</span>
+          <h3>Identity, email &amp; data controls</h3>
+          <div class="check-grid">
+            <span>MFA &amp; Conditional Access policies</span>
+            <span>Privileged / admin role assignments</span>
+            <span>Microsoft Secure Score baseline</span>
+            <span>Email security (Defender for Office 365, SPF/DKIM/DMARC)</span>
+            <span>Data loss prevention &amp; sensitivity labels</span>
+            <span>External sharing &amp; guest access (SharePoint/Teams)</span>
+            <span>Device compliance &amp; Intune enrollment</span>
+            <span>Audit logging &amp; alert policies</span>
+            <span>Legacy authentication protocols</span>
+            <span>Mailbox forwarding &amp; inbox rule abuse</span>
+          </div>
+        </div>
+        <div class="side">
+          <h4>What you get</h4>
+          <div class="check-grid" style="grid-template-columns:1fr; margin-top:0;">
+            <span>Plain-language findings report</span>
+            <span>Risk-ranked fix list</span>
+            <span>Secure Score improvement roadmap</span>
+            <span>Evidence summary for leadership or your broker</span>
+            <span>Follow-up re-check after fixes are made</span>
+          </div>
+          <p style="margin-top:24px;"><strong style="color:var(--text);">Pricing TBD.</strong> Scoped per engagement &mdash; placeholder until rates are set.</p>
+        </div>
+      </div>
+      <p class="fine-print">GhostGrid Cyber performs read-only review wherever possible. Clients retain full control of their own environment and remediation decisions.</p>
+    </section>
+
+    <section style="margin-bottom: 80px;">
+      <span class="section-tag">How It Works</span>
+      <h2>From Review to Roadmap</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Discovery Call</h3>
+          <p>Short call to understand your tenant size, licensing, and priorities.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Assessment</h3>
+          <p>Read-only review of your M365 tenant against baseline security controls.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Report &amp; Roadmap</h3>
+          <p>Findings report with a prioritized, practical fix list.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Re-Check</h3>
+          <p>Confirm the fixes landed and the gaps are closed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+      <span class="section-tag">Roadmap</span>
+      <h2>Where This Is Headed</h2>
+      <p style="max-width:640px;">Microsoft 365 assessments are the starting point. The service menu grows as each offering is battle-tested.</p>
+      <div class="roadmap-list">
+        <div class="roadmap-item active">
+          <div>
+            <h4>Microsoft 365 Security Assessment</h4>
+            <p>Identity, email, data &amp; device controls</p>
+          </div>
+          <span class="roadmap-tag now">In Progress</span>
+        </div>
+        <div class="roadmap-item">
+          <div>
+            <h4>Azure Security Assessment</h4>
+            <p>Entra ID, resource configuration, network &amp; identity posture</p>
+          </div>
+          <span class="roadmap-tag next">Next Up</span>
+        </div>
+        <div class="roadmap-item">
+          <div>
+            <h4>Additional Cloud &amp; SMB Security Services</h4>
+            <p>Added as each skill area is ready for client work</p>
+          </div>
+          <span class="roadmap-tag later">Later</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-logo">GHOSTGRID CYBER</span>
+    <p><a href="mailto:dmc@ghostgridcyber.com">dmc@ghostgridcyber.com</a></p>
+    <p>&copy; <span id="year"></span> GhostGrid Cyber. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
